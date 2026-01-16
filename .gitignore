@@ -1,5 +1,15 @@
+# macOS
+.DS_Store
+
+# Claude Code
+.claude/
+
 # generated part of documentation
 /docs/elements/*.md
+/docs/schema/
+
+# generated datamodels
+/src/common_data_elements_schema/datamodel/
 # linkml-run-examples output (not useful to have in git in its current form)
 /examples/output/
 
