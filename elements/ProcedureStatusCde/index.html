@@ -385,7 +385,7 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/diatomsRcool/common-data-elements-schema</li>
+<li>from schema: https://w3id.org/linkml/common-data-elements-schema</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -413,7 +413,7 @@
 <pre><code class="language-yaml">name: ProcedureStatusCde
 description: Record of activity or process ordered by or carried out by a healthcare
   provider for a diagnostic or theraputic reason
-from_schema: https://w3id.org/diatomsRcool/common-data-elements-schema
+from_schema: https://w3id.org/linkml/common-data-elements-schema
 is_a: CdeThing
 slots:
 - subject_identifier
@@ -430,13 +430,13 @@ class_uri: bdchm:Procedure
 <pre><code class="language-yaml">name: ProcedureStatusCde
 description: Record of activity or process ordered by or carried out by a healthcare
   provider for a diagnostic or theraputic reason
-from_schema: https://w3id.org/diatomsRcool/common-data-elements-schema
+from_schema: https://w3id.org/linkml/common-data-elements-schema
 is_a: CdeThing
 attributes:
   subject_identifier:
     name: subject_identifier
     description: An identifier for the subject of the datum
-    from_schema: https://w3id.org/diatomsRcool/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/common-data-elements-schema
     rank: 1000
     alias: subject_identifier
     owner: ProcedureStatusCde
@@ -450,7 +450,7 @@ attributes:
   procedure_type:
     name: procedure_type
     description: A CURIE from OMOP
-    from_schema: https://w3id.org/diatomsRcool/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/common-data-elements-schema
     rank: 1000
     slot_uri: bdchm:procedure_concept
     alias: procedure_type
@@ -461,7 +461,7 @@ attributes:
   method:
     name: method
     description: The method used for the measurement
-    from_schema: https://w3id.org/diatomsRcool/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/common-data-elements-schema
     rank: 1000
     slot_uri: bdchm:method_type
     alias: method
@@ -476,7 +476,7 @@ attributes:
   collected_by:
     name: collected_by
     description: Who collected the measurement
-    from_schema: https://w3id.org/diatomsRcool/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/common-data-elements-schema
     rank: 1000
     alias: collected_by
     owner: ProcedureStatusCde
@@ -489,7 +489,7 @@ attributes:
   age_at_procedure:
     name: age_at_procedure
     description: Age of the subject at the time of the procedure
-    from_schema: https://w3id.org/diatomsRcool/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/common-data-elements-schema
     rank: 1000
     alias: age_at_procedure
     owner: ProcedureStatusCde
@@ -499,7 +499,7 @@ attributes:
   id:
     name: id
     description: A unique identifier for a thing
-    from_schema: https://w3id.org/diatomsRcool/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/common-data-elements-schema
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
@@ -512,7 +512,7 @@ attributes:
   name:
     name: name
     description: A human-readable name for a thing
-    from_schema: https://w3id.org/diatomsRcool/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/common-data-elements-schema
     rank: 1000
     slot_uri: schema:name
     alias: name
@@ -523,7 +523,7 @@ attributes:
   description:
     name: description
     description: A human-readable description for a thing
-    from_schema: https://w3id.org/diatomsRcool/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/common-data-elements-schema
     rank: 1000
     slot_uri: schema:description
     alias: description

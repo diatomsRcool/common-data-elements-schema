@@ -419,7 +419,7 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/diatomsRcool/common-data-elements-schema</li>
+<li>from schema: https://w3id.org/linkml/common-data-elements-schema</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -447,7 +447,7 @@
 <pre><code class="language-yaml">name: ConditionStatusCde
 description: Record suggesting the presence of a disease or medical condition stated
   as a diagnosis, sign, or symptom
-from_schema: https://w3id.org/diatomsRcool/common-data-elements-schema
+from_schema: https://w3id.org/linkml/common-data-elements-schema
 is_a: CdeThing
 slots:
 - subject_identifier
@@ -466,13 +466,13 @@ class_uri: bdchm:Condition
 <pre><code class="language-yaml">name: ConditionStatusCde
 description: Record suggesting the presence of a disease or medical condition stated
   as a diagnosis, sign, or symptom
-from_schema: https://w3id.org/diatomsRcool/common-data-elements-schema
+from_schema: https://w3id.org/linkml/common-data-elements-schema
 is_a: CdeThing
 attributes:
   subject_identifier:
     name: subject_identifier
     description: An identifier for the subject of the datum
-    from_schema: https://w3id.org/diatomsRcool/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/common-data-elements-schema
     rank: 1000
     alias: subject_identifier
     owner: ConditionStatusCde
@@ -486,7 +486,7 @@ attributes:
   condition_type:
     name: condition_type
     description: A CURIE from MONDO or HPO
-    from_schema: https://w3id.org/diatomsRcool/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/common-data-elements-schema
     rank: 1000
     slot_uri: bdchm:condition_concept
     alias: condition_type
@@ -497,7 +497,7 @@ attributes:
   method:
     name: method
     description: The method used for the measurement
-    from_schema: https://w3id.org/diatomsRcool/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/common-data-elements-schema
     rank: 1000
     slot_uri: bdchm:method_type
     alias: method
@@ -512,7 +512,7 @@ attributes:
   diagnosis_method:
     name: diagnosis_method
     description: The method used for diagnosis
-    from_schema: https://w3id.org/diatomsRcool/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/common-data-elements-schema
     rank: 1000
     alias: diagnosis_method
     owner: ConditionStatusCde
@@ -522,7 +522,7 @@ attributes:
   instrument:
     name: instrument
     description: The instrument used for the measurement
-    from_schema: https://w3id.org/diatomsRcool/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/common-data-elements-schema
     rank: 1000
     alias: instrument
     owner: ConditionStatusCde
@@ -533,7 +533,7 @@ attributes:
   age_at_condition_start:
     name: age_at_condition_start
     description: Age of the subject at the start of the condition
-    from_schema: https://w3id.org/diatomsRcool/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/common-data-elements-schema
     rank: 1000
     alias: age_at_condition_start
     owner: ConditionStatusCde
@@ -543,7 +543,7 @@ attributes:
   age_at_condition_end:
     name: age_at_condition_end
     description: Age of the subject at the end of the condition
-    from_schema: https://w3id.org/diatomsRcool/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/common-data-elements-schema
     rank: 1000
     alias: age_at_condition_end
     owner: ConditionStatusCde
@@ -553,7 +553,7 @@ attributes:
   id:
     name: id
     description: A unique identifier for a thing
-    from_schema: https://w3id.org/diatomsRcool/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/common-data-elements-schema
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
@@ -566,7 +566,7 @@ attributes:
   name:
     name: name
     description: A human-readable name for a thing
-    from_schema: https://w3id.org/diatomsRcool/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/common-data-elements-schema
     rank: 1000
     slot_uri: schema:name
     alias: name
@@ -577,7 +577,7 @@ attributes:
   description:
     name: description
     description: A human-readable description for a thing
-    from_schema: https://w3id.org/diatomsRcool/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/common-data-elements-schema
     rank: 1000
     slot_uri: schema:description
     alias: description

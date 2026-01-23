@@ -528,7 +528,7 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/diatomsRcool/common-data-elements-schema</li>
+<li>from schema: https://w3id.org/linkml/common-data-elements-schema</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -556,7 +556,7 @@
 <pre><code class="language-yaml">name: MeasurementObservationCde
 description: A data structure with key and value attributes that represents a single
   observation
-from_schema: https://w3id.org/diatomsRcool/common-data-elements-schema
+from_schema: https://w3id.org/linkml/common-data-elements-schema
 is_a: CdeThing
 slots:
 - subject_identifier
@@ -583,13 +583,13 @@ class_uri: bdchm:MeasurementObservation
 <pre><code class="language-yaml">name: MeasurementObservationCde
 description: A data structure with key and value attributes that represents a single
   observation
-from_schema: https://w3id.org/diatomsRcool/common-data-elements-schema
+from_schema: https://w3id.org/linkml/common-data-elements-schema
 is_a: CdeThing
 attributes:
   subject_identifier:
     name: subject_identifier
     description: An identifier for the subject of the datum
-    from_schema: https://w3id.org/diatomsRcool/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/common-data-elements-schema
     rank: 1000
     alias: subject_identifier
     owner: MeasurementObservationCde
@@ -603,7 +603,7 @@ attributes:
   measurement_type:
     name: measurement_type
     description: A CURIE from OBA, OMOP, or LOINC
-    from_schema: https://w3id.org/diatomsRcool/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/common-data-elements-schema
     rank: 1000
     slot_uri: bdchm:observation_type
     alias: measurement_type
@@ -614,7 +614,7 @@ attributes:
   unit:
     name: unit
     description: A unit from UCUM
-    from_schema: https://w3id.org/diatomsRcool/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/common-data-elements-schema
     rank: 1000
     slot_uri: bdchm:unit
     alias: unit
@@ -627,7 +627,7 @@ attributes:
   method:
     name: method
     description: The method used for the measurement
-    from_schema: https://w3id.org/diatomsRcool/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/common-data-elements-schema
     rank: 1000
     slot_uri: bdchm:method_type
     alias: method
@@ -642,7 +642,7 @@ attributes:
   instrument:
     name: instrument
     description: The instrument used for the measurement
-    from_schema: https://w3id.org/diatomsRcool/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/common-data-elements-schema
     rank: 1000
     alias: instrument
     owner: MeasurementObservationCde
@@ -653,7 +653,7 @@ attributes:
   reagent_kit:
     name: reagent_kit
     description: The reagent kit used for the measurement
-    from_schema: https://w3id.org/diatomsRcool/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/common-data-elements-schema
     rank: 1000
     alias: reagent_kit
     owner: MeasurementObservationCde
@@ -663,7 +663,7 @@ attributes:
   ulod:
     name: ulod
     description: Upper limit of detection
-    from_schema: https://w3id.org/diatomsRcool/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/common-data-elements-schema
     rank: 1000
     alias: ulod
     owner: MeasurementObservationCde
@@ -673,7 +673,7 @@ attributes:
   llod:
     name: llod
     description: Lower limit of detection
-    from_schema: https://w3id.org/diatomsRcool/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/common-data-elements-schema
     rank: 1000
     alias: llod
     owner: MeasurementObservationCde
@@ -683,7 +683,7 @@ attributes:
   calculated_from:
     name: calculated_from
     description: An expression pointing at other CDE classes
-    from_schema: https://w3id.org/diatomsRcool/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/common-data-elements-schema
     rank: 1000
     alias: calculated_from
     owner: MeasurementObservationCde
@@ -693,7 +693,7 @@ attributes:
   body_location:
     name: body_location
     description: A CURIE from UBERON
-    from_schema: https://w3id.org/diatomsRcool/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/common-data-elements-schema
     rank: 1000
     slot_uri: bdchm:BodySite
     alias: body_location
@@ -704,7 +704,7 @@ attributes:
   body_position:
     name: body_position
     description: The body position during measurement
-    from_schema: https://w3id.org/diatomsRcool/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/common-data-elements-schema
     rank: 1000
     alias: body_position
     owner: MeasurementObservationCde
@@ -714,7 +714,7 @@ attributes:
   context:
     name: context
     description: The context of the measurement
-    from_schema: https://w3id.org/diatomsRcool/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/common-data-elements-schema
     rank: 1000
     alias: context
     owner: MeasurementObservationCde
@@ -725,7 +725,7 @@ attributes:
   collected_by:
     name: collected_by
     description: Who collected the measurement
-    from_schema: https://w3id.org/diatomsRcool/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/common-data-elements-schema
     rank: 1000
     alias: collected_by
     owner: MeasurementObservationCde
@@ -738,7 +738,7 @@ attributes:
   data_type:
     name: data_type
     description: The data type of the observation
-    from_schema: https://w3id.org/diatomsRcool/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/common-data-elements-schema
     rank: 1000
     alias: data_type
     owner: MeasurementObservationCde
@@ -749,7 +749,7 @@ attributes:
   age_at_observation:
     name: age_at_observation
     description: Age of the subject at the time of observation
-    from_schema: https://w3id.org/diatomsRcool/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/common-data-elements-schema
     rank: 1000
     alias: age_at_observation
     owner: MeasurementObservationCde
@@ -760,7 +760,7 @@ attributes:
   id:
     name: id
     description: A unique identifier for a thing
-    from_schema: https://w3id.org/diatomsRcool/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/common-data-elements-schema
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
@@ -773,7 +773,7 @@ attributes:
   name:
     name: name
     description: A human-readable name for a thing
-    from_schema: https://w3id.org/diatomsRcool/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/common-data-elements-schema
     rank: 1000
     slot_uri: schema:name
     alias: name
@@ -784,7 +784,7 @@ attributes:
   description:
     name: description
     description: A human-readable description for a thing
-    from_schema: https://w3id.org/diatomsRcool/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/common-data-elements-schema
     rank: 1000
     slot_uri: schema:description
     alias: description
