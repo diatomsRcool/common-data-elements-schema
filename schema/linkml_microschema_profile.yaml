@@ -1,16 +1,16 @@
-name: common-data-elements-schema
+name: linkml-microschema-profile
 description: This is a LinkML schema for CDEs
-title: common-data-elements-schema
+title: linkml-microschema-profile
 see_also:
-- https://linkml.github.io/common-data-elements-schema
-id: https://w3id.org/linkml/common-data-elements-schema
+- https://linkml.github.io/linkml-microschema-profile
+id: https://w3id.org/linkml/linkml-microschema-profile
 imports:
 - linkml:types
 license: MIT
 prefixes:
-  common_data_elements_schema:
-    prefix_prefix: common_data_elements_schema
-    prefix_reference: https://w3id.org/linkml/common-data-elements-schema/
+  linkml_microschema_profile:
+    prefix_prefix: linkml_microschema_profile
+    prefix_reference: https://w3id.org/linkml/linkml-microschema-profile/
   linkml:
     prefix_prefix: linkml
     prefix_reference: https://w3id.org/linkml/
@@ -53,7 +53,7 @@ prefixes:
   example:
     prefix_prefix: example
     prefix_reference: http://www.example.org/rdf#
-default_prefix: common_data_elements_schema
+default_prefix: linkml_microschema_profile
 default_range: string
 types:
   string:
@@ -327,9 +327,9 @@ types:
 enums:
   DataTypeEnum:
     name: DataTypeEnum
-    definition_uri: https://w3id.org/linkml/common-data-elements-schema/DataTypeEnum
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/DataTypeEnum
     description: The data type of an observation value
-    from_schema: https://w3id.org/linkml/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
     permissible_values:
       decimal:
         text: decimal
@@ -345,36 +345,36 @@ enums:
         description: Boolean value
   MethodEnum:
     name: MethodEnum
-    definition_uri: https://w3id.org/linkml/common-data-elements-schema/MethodEnum
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/MethodEnum
     description: The method used for a measurement or observation
-    from_schema: https://w3id.org/linkml/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
     permissible_values:
       placeholder:
         text: placeholder
         description: Placeholder value
   InstrumentEnum:
     name: InstrumentEnum
-    definition_uri: https://w3id.org/linkml/common-data-elements-schema/InstrumentEnum
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/InstrumentEnum
     description: The instrument used for a measurement
-    from_schema: https://w3id.org/linkml/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
     permissible_values:
       placeholder:
         text: placeholder
         description: Placeholder value
   ReagentKitEnum:
     name: ReagentKitEnum
-    definition_uri: https://w3id.org/linkml/common-data-elements-schema/ReagentKitEnum
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/ReagentKitEnum
     description: The reagent kit used for a measurement
-    from_schema: https://w3id.org/linkml/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
     permissible_values:
       placeholder:
         text: placeholder
         description: Placeholder value
   BodyPositionEnum:
     name: BodyPositionEnum
-    definition_uri: https://w3id.org/linkml/common-data-elements-schema/BodyPositionEnum
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/BodyPositionEnum
     description: The body position during a measurement
-    from_schema: https://w3id.org/linkml/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
     permissible_values:
       supine:
         text: supine
@@ -387,9 +387,9 @@ enums:
         description: Seated position
   ContextEnum:
     name: ContextEnum
-    definition_uri: https://w3id.org/linkml/common-data-elements-schema/ContextEnum
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/ContextEnum
     description: The context in which a measurement was taken
-    from_schema: https://w3id.org/linkml/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
     permissible_values:
       fasted_8_hrs:
         text: fasted_8_hrs
@@ -426,9 +426,9 @@ enums:
         description: Lowest recorded value
   CollectedByEnum:
     name: CollectedByEnum
-    definition_uri: https://w3id.org/linkml/common-data-elements-schema/CollectedByEnum
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/CollectedByEnum
     description: Who collected the measurement
-    from_schema: https://w3id.org/linkml/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
     permissible_values:
       doctor:
         text: doctor
@@ -450,9 +450,9 @@ enums:
         description: Collected by the second examiner
   DiagnosisMethodEnum:
     name: DiagnosisMethodEnum
-    definition_uri: https://w3id.org/linkml/common-data-elements-schema/DiagnosisMethodEnum
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/DiagnosisMethodEnum
     description: The method used for diagnosis
-    from_schema: https://w3id.org/linkml/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
     permissible_values:
       placeholder:
         text: placeholder
@@ -460,9 +460,9 @@ enums:
 slots:
   id:
     name: id
-    definition_uri: https://w3id.org/linkml/common-data-elements-schema/id
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/id
     description: A unique identifier for a thing
-    from_schema: https://w3id.org/linkml/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
     mappings:
     - schema:identifier
     slot_uri: schema:identifier
@@ -474,9 +474,9 @@ slots:
     required: true
   name:
     name: name
-    definition_uri: https://w3id.org/linkml/common-data-elements-schema/name
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/name
     description: A human-readable name for a thing
-    from_schema: https://w3id.org/linkml/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
     mappings:
     - schema:name
     slot_uri: schema:name
@@ -486,9 +486,9 @@ slots:
     range: string
   description:
     name: description
-    definition_uri: https://w3id.org/linkml/common-data-elements-schema/description
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/description
     description: A human-readable description for a thing
-    from_schema: https://w3id.org/linkml/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
     mappings:
     - schema:description
     slot_uri: schema:description
@@ -498,9 +498,9 @@ slots:
     range: string
   measurement_type:
     name: measurement_type
-    definition_uri: https://w3id.org/linkml/common-data-elements-schema/measurement_type
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/measurement_type
     description: A CURIE from OBA, OMOP, or LOINC
-    from_schema: https://w3id.org/linkml/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
     mappings:
     - bdchm:observation_type
     slot_uri: bdchm:observation_type
@@ -510,9 +510,9 @@ slots:
     range: uriorcurie
   unit:
     name: unit
-    definition_uri: https://w3id.org/linkml/common-data-elements-schema/unit
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/unit
     description: A unit from UCUM
-    from_schema: https://w3id.org/linkml/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
     mappings:
     - bdchm:unit
     slot_uri: bdchm:unit
@@ -523,9 +523,9 @@ slots:
     range: uriorcurie
   method:
     name: method
-    definition_uri: https://w3id.org/linkml/common-data-elements-schema/method
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/method
     description: The method used for the measurement
-    from_schema: https://w3id.org/linkml/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
     mappings:
     - bdchm:method_type
     slot_uri: bdchm:method_type
@@ -539,10 +539,10 @@ slots:
     range: MethodEnum
   instrument:
     name: instrument
-    definition_uri: https://w3id.org/linkml/common-data-elements-schema/instrument
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/instrument
     description: The instrument used for the measurement
-    from_schema: https://w3id.org/linkml/common-data-elements-schema
-    slot_uri: common_data_elements_schema:instrument
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    slot_uri: linkml_microschema_profile:instrument
     owner: ConditionStatusCde
     domain_of:
     - MeasurementObservationCde
@@ -550,20 +550,20 @@ slots:
     range: InstrumentEnum
   reagent_kit:
     name: reagent_kit
-    definition_uri: https://w3id.org/linkml/common-data-elements-schema/reagent_kit
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/reagent_kit
     description: The reagent kit used for the measurement
-    from_schema: https://w3id.org/linkml/common-data-elements-schema
-    slot_uri: common_data_elements_schema:reagent_kit
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    slot_uri: linkml_microschema_profile:reagent_kit
     owner: MeasurementObservationCde
     domain_of:
     - MeasurementObservationCde
     range: ReagentKitEnum
   ulod:
     name: ulod
-    definition_uri: https://w3id.org/linkml/common-data-elements-schema/ulod
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/ulod
     description: Upper limit of detection
-    from_schema: https://w3id.org/linkml/common-data-elements-schema
-    slot_uri: common_data_elements_schema:ulod
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    slot_uri: linkml_microschema_profile:ulod
     owner: MeasurementObservationCde
     domain_of:
     - MeasurementObservationCde
@@ -572,10 +572,10 @@ slots:
     inlined_as_list: true
   llod:
     name: llod
-    definition_uri: https://w3id.org/linkml/common-data-elements-schema/llod
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/llod
     description: Lower limit of detection
-    from_schema: https://w3id.org/linkml/common-data-elements-schema
-    slot_uri: common_data_elements_schema:llod
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    slot_uri: linkml_microschema_profile:llod
     owner: MeasurementObservationCde
     domain_of:
     - MeasurementObservationCde
@@ -584,19 +584,19 @@ slots:
     inlined_as_list: true
   calculated_from:
     name: calculated_from
-    definition_uri: https://w3id.org/linkml/common-data-elements-schema/calculated_from
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/calculated_from
     description: An expression pointing at other CDE classes
-    from_schema: https://w3id.org/linkml/common-data-elements-schema
-    slot_uri: common_data_elements_schema:calculated_from
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    slot_uri: linkml_microschema_profile:calculated_from
     owner: MeasurementObservationCde
     domain_of:
     - MeasurementObservationCde
     range: string
   body_location:
     name: body_location
-    definition_uri: https://w3id.org/linkml/common-data-elements-schema/body_location
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/body_location
     description: A CURIE from UBERON
-    from_schema: https://w3id.org/linkml/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
     mappings:
     - bdchm:BodySite
     slot_uri: bdchm:BodySite
@@ -606,20 +606,20 @@ slots:
     range: uriorcurie
   body_position:
     name: body_position
-    definition_uri: https://w3id.org/linkml/common-data-elements-schema/body_position
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/body_position
     description: The body position during measurement
-    from_schema: https://w3id.org/linkml/common-data-elements-schema
-    slot_uri: common_data_elements_schema:body_position
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    slot_uri: linkml_microschema_profile:body_position
     owner: MeasurementObservationCde
     domain_of:
     - MeasurementObservationCde
     range: BodyPositionEnum
   context:
     name: context
-    definition_uri: https://w3id.org/linkml/common-data-elements-schema/context
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/context
     description: The context of the measurement
-    from_schema: https://w3id.org/linkml/common-data-elements-schema
-    slot_uri: common_data_elements_schema:context
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    slot_uri: linkml_microschema_profile:context
     owner: SdohObservationCde
     domain_of:
     - MeasurementObservationCde
@@ -627,10 +627,10 @@ slots:
     range: ContextEnum
   collected_by:
     name: collected_by
-    definition_uri: https://w3id.org/linkml/common-data-elements-schema/collected_by
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/collected_by
     description: Who collected the measurement
-    from_schema: https://w3id.org/linkml/common-data-elements-schema
-    slot_uri: common_data_elements_schema:collected_by
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    slot_uri: linkml_microschema_profile:collected_by
     owner: SdohObservationCde
     domain_of:
     - MeasurementObservationCde
@@ -640,9 +640,9 @@ slots:
     range: CollectedByEnum
   condition_type:
     name: condition_type
-    definition_uri: https://w3id.org/linkml/common-data-elements-schema/condition_type
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/condition_type
     description: A CURIE from MONDO or HPO
-    from_schema: https://w3id.org/linkml/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
     mappings:
     - bdchm:condition_concept
     slot_uri: bdchm:condition_concept
@@ -652,19 +652,19 @@ slots:
     range: uriorcurie
   diagnosis_method:
     name: diagnosis_method
-    definition_uri: https://w3id.org/linkml/common-data-elements-schema/diagnosis_method
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/diagnosis_method
     description: The method used for diagnosis
-    from_schema: https://w3id.org/linkml/common-data-elements-schema
-    slot_uri: common_data_elements_schema:diagnosis_method
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    slot_uri: linkml_microschema_profile:diagnosis_method
     owner: ConditionStatusCde
     domain_of:
     - ConditionStatusCde
     range: DiagnosisMethodEnum
   drug_type:
     name: drug_type
-    definition_uri: https://w3id.org/linkml/common-data-elements-schema/drug_type
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/drug_type
     description: A CURIE from RxNorm
-    from_schema: https://w3id.org/linkml/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
     mappings:
     - bdchm:drug_concept
     slot_uri: bdchm:drug_concept
@@ -674,9 +674,9 @@ slots:
     range: uriorcurie
   procedure_type:
     name: procedure_type
-    definition_uri: https://w3id.org/linkml/common-data-elements-schema/procedure_type
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/procedure_type
     description: A CURIE from OMOP
-    from_schema: https://w3id.org/linkml/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
     mappings:
     - bdchm:procedure_concept
     slot_uri: bdchm:procedure_concept
@@ -686,9 +686,9 @@ slots:
     range: uriorcurie
   sdoh_type:
     name: sdoh_type
-    definition_uri: https://w3id.org/linkml/common-data-elements-schema/sdoh_type
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/sdoh_type
     description: The type of SDOH observation
-    from_schema: https://w3id.org/linkml/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
     mappings:
     - bdchm:category
     slot_uri: bdchm:category
@@ -698,10 +698,10 @@ slots:
     range: uriorcurie
   data_type:
     name: data_type
-    definition_uri: https://w3id.org/linkml/common-data-elements-schema/data_type
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/data_type
     description: The data type of the observation
-    from_schema: https://w3id.org/linkml/common-data-elements-schema
-    slot_uri: common_data_elements_schema:data_type
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    slot_uri: linkml_microschema_profile:data_type
     owner: SdohObservationCde
     domain_of:
     - MeasurementObservationCde
@@ -709,10 +709,10 @@ slots:
     range: DataTypeEnum
   age_at_observation:
     name: age_at_observation
-    definition_uri: https://w3id.org/linkml/common-data-elements-schema/age_at_observation
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/age_at_observation
     description: Age of the subject at the time of observation
-    from_schema: https://w3id.org/linkml/common-data-elements-schema
-    slot_uri: common_data_elements_schema:age_at_observation
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    slot_uri: linkml_microschema_profile:age_at_observation
     owner: SdohObservationCde
     domain_of:
     - MeasurementObservationCde
@@ -722,10 +722,10 @@ slots:
     inlined_as_list: true
   age_at_condition_start:
     name: age_at_condition_start
-    definition_uri: https://w3id.org/linkml/common-data-elements-schema/age_at_condition_start
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/age_at_condition_start
     description: Age of the subject at the start of the condition
-    from_schema: https://w3id.org/linkml/common-data-elements-schema
-    slot_uri: common_data_elements_schema:age_at_condition_start
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    slot_uri: linkml_microschema_profile:age_at_condition_start
     owner: ConditionStatusCde
     domain_of:
     - ConditionStatusCde
@@ -734,10 +734,10 @@ slots:
     inlined_as_list: true
   age_at_condition_end:
     name: age_at_condition_end
-    definition_uri: https://w3id.org/linkml/common-data-elements-schema/age_at_condition_end
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/age_at_condition_end
     description: Age of the subject at the end of the condition
-    from_schema: https://w3id.org/linkml/common-data-elements-schema
-    slot_uri: common_data_elements_schema:age_at_condition_end
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    slot_uri: linkml_microschema_profile:age_at_condition_end
     owner: ConditionStatusCde
     domain_of:
     - ConditionStatusCde
@@ -746,10 +746,10 @@ slots:
     inlined_as_list: true
   age_at_exposure_start:
     name: age_at_exposure_start
-    definition_uri: https://w3id.org/linkml/common-data-elements-schema/age_at_exposure_start
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/age_at_exposure_start
     description: Age of the subject at the start of drug exposure
-    from_schema: https://w3id.org/linkml/common-data-elements-schema
-    slot_uri: common_data_elements_schema:age_at_exposure_start
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    slot_uri: linkml_microschema_profile:age_at_exposure_start
     owner: DrugStatusCde
     domain_of:
     - DrugStatusCde
@@ -758,10 +758,10 @@ slots:
     inlined_as_list: true
   age_at_exposure_end:
     name: age_at_exposure_end
-    definition_uri: https://w3id.org/linkml/common-data-elements-schema/age_at_exposure_end
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/age_at_exposure_end
     description: Age of the subject at the end of drug exposure
-    from_schema: https://w3id.org/linkml/common-data-elements-schema
-    slot_uri: common_data_elements_schema:age_at_exposure_end
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    slot_uri: linkml_microschema_profile:age_at_exposure_end
     owner: DrugStatusCde
     domain_of:
     - DrugStatusCde
@@ -770,10 +770,10 @@ slots:
     inlined_as_list: true
   age_at_procedure:
     name: age_at_procedure
-    definition_uri: https://w3id.org/linkml/common-data-elements-schema/age_at_procedure
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/age_at_procedure
     description: Age of the subject at the time of the procedure
-    from_schema: https://w3id.org/linkml/common-data-elements-schema
-    slot_uri: common_data_elements_schema:age_at_procedure
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    slot_uri: linkml_microschema_profile:age_at_procedure
     owner: ProcedureStatusCde
     domain_of:
     - ProcedureStatusCde
@@ -782,10 +782,10 @@ slots:
     inlined_as_list: true
   subject_identifier:
     name: subject_identifier
-    definition_uri: https://w3id.org/linkml/common-data-elements-schema/subject_identifier
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/subject_identifier
     description: An identifier for the subject of the datum
-    from_schema: https://w3id.org/linkml/common-data-elements-schema
-    slot_uri: common_data_elements_schema:subject_identifier
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    slot_uri: linkml_microschema_profile:subject_identifier
     owner: SdohObservationCde
     domain_of:
     - MeasurementObservationCde
@@ -797,8 +797,8 @@ slots:
   quantity__value:
     name: quantity__value
     description: The numeric value
-    from_schema: https://w3id.org/linkml/common-data-elements-schema
-    slot_uri: common_data_elements_schema:value
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    slot_uri: linkml_microschema_profile:value
     alias: value
     owner: Quantity
     domain_of:
@@ -807,8 +807,8 @@ slots:
   quantity__unit:
     name: quantity__unit
     description: A unit from UCUM
-    from_schema: https://w3id.org/linkml/common-data-elements-schema
-    slot_uri: common_data_elements_schema:unit
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    slot_uri: linkml_microschema_profile:unit
     alias: unit
     owner: Quantity
     domain_of:
@@ -817,8 +817,8 @@ slots:
   cdeCollection__entries:
     name: cdeCollection__entries
     description: The collection of CDE objects
-    from_schema: https://w3id.org/linkml/common-data-elements-schema
-    slot_uri: common_data_elements_schema:entries
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    slot_uri: linkml_microschema_profile:entries
     alias: entries
     owner: CdeCollection
     domain_of:
@@ -830,9 +830,9 @@ slots:
 classes:
   NamedThing:
     name: NamedThing
-    definition_uri: https://w3id.org/linkml/common-data-elements-schema/NamedThing
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/NamedThing
     description: A generic grouping for any identifiable entity
-    from_schema: https://w3id.org/linkml/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
     mappings:
     - schema:Thing
     slots:
@@ -842,20 +842,20 @@ classes:
     class_uri: schema:Thing
   CdeThing:
     name: CdeThing
-    definition_uri: https://w3id.org/linkml/common-data-elements-schema/CdeThing
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/CdeThing
     description: Represents a CDE
-    from_schema: https://w3id.org/linkml/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
     is_a: NamedThing
     slots:
     - id
     - name
     - description
-    class_uri: common_data_elements_schema:CdeThing
+    class_uri: linkml_microschema_profile:CdeThing
   Quantity:
     name: Quantity
-    definition_uri: https://w3id.org/linkml/common-data-elements-schema/Quantity
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/Quantity
     description: A value with a unit
-    from_schema: https://w3id.org/linkml/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
     slots:
     - quantity__value
     - quantity__unit
@@ -868,13 +868,13 @@ classes:
         name: unit
         description: A unit from UCUM
         range: uriorcurie
-    class_uri: common_data_elements_schema:Quantity
+    class_uri: linkml_microschema_profile:Quantity
   MeasurementObservationCde:
     name: MeasurementObservationCde
-    definition_uri: https://w3id.org/linkml/common-data-elements-schema/MeasurementObservationCde
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/MeasurementObservationCde
     description: A data structure with key and value attributes that represents a
       single observation
-    from_schema: https://w3id.org/linkml/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
     mappings:
     - bdchm:MeasurementObservation
     is_a: CdeThing
@@ -900,10 +900,10 @@ classes:
     class_uri: bdchm:MeasurementObservation
   ConditionStatusCde:
     name: ConditionStatusCde
-    definition_uri: https://w3id.org/linkml/common-data-elements-schema/ConditionStatusCde
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/ConditionStatusCde
     description: Record suggesting the presence of a disease or medical condition
       stated as a diagnosis, sign, or symptom
-    from_schema: https://w3id.org/linkml/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
     mappings:
     - bdchm:Condition
     is_a: CdeThing
@@ -921,9 +921,9 @@ classes:
     class_uri: bdchm:Condition
   DrugStatusCde:
     name: DrugStatusCde
-    definition_uri: https://w3id.org/linkml/common-data-elements-schema/DrugStatusCde
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/DrugStatusCde
     description: Record suggesting exposure to a medication
-    from_schema: https://w3id.org/linkml/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
     mappings:
     - bdchm:DrugExposure
     is_a: CdeThing
@@ -940,10 +940,10 @@ classes:
     class_uri: bdchm:DrugExposure
   ProcedureStatusCde:
     name: ProcedureStatusCde
-    definition_uri: https://w3id.org/linkml/common-data-elements-schema/ProcedureStatusCde
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/ProcedureStatusCde
     description: Record of activity or process ordered by or carried out by a healthcare
       provider for a diagnostic or theraputic reason
-    from_schema: https://w3id.org/linkml/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
     mappings:
     - bdchm:Procedure
     is_a: CdeThing
@@ -959,10 +959,10 @@ classes:
     class_uri: bdchm:Procedure
   SdohObservationCde:
     name: SdohObservationCde
-    definition_uri: https://w3id.org/linkml/common-data-elements-schema/SdohObservationCde
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/SdohObservationCde
     description: A data structure with key and value attributes that represents a
       single Sdoh observation
-    from_schema: https://w3id.org/linkml/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
     mappings:
     - bdchm:SdohObservation
     is_a: CdeThing
@@ -981,9 +981,9 @@ classes:
     class_uri: bdchm:SdohObservation
   CdeCollection:
     name: CdeCollection
-    definition_uri: https://w3id.org/linkml/common-data-elements-schema/CdeCollection
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/CdeCollection
     description: A holder for CDE objects
-    from_schema: https://w3id.org/linkml/common-data-elements-schema
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
     slots:
     - cdeCollection__entries
     attributes:
@@ -993,11 +993,11 @@ classes:
         range: CdeThing
         multivalued: true
         inlined_as_list: true
-    class_uri: common_data_elements_schema:CdeCollection
+    class_uri: linkml_microschema_profile:CdeCollection
     tree_root: true
 metamodel_version: 1.7.0
-source_file: common_data_elements_schema.yaml
-source_file_date: '2026-01-23T18:11:26'
-source_file_size: 9107
-generation_date: '2026-01-23T18:11:35'
+source_file: linkml_microschema_profile.yaml
+source_file_date: '2026-01-27T18:18:27'
+source_file_size: 9100
+generation_date: '2026-01-27T18:18:38'
 
