@@ -40,7 +40,7 @@ classes:
 
   MicroschemaDefinition:
     class_uri: coms:MicroschemaDefinition
-    mixin: true
+    abstract: true
     description: >-
       A metaclass for classes that conform to the Microschema profile.
       Classes that instantiate this are designed for inline composition.
@@ -56,7 +56,7 @@ classes:
   ValueMicroschemaDefinition:
     class_uri: coms:ValueMicroschemaDefinition
     is_a: MicroschemaDefinition
-    mixin: true
+    abstract: true
     description: >-
       A microschema representing a typed value with optional unit/system.
       Examples: Quantity, Timepoint, CodedValue, Range.
@@ -66,7 +66,7 @@ classes:
   #────────────────────────────────────────────────────────────────
 
   Quantity:
-    mixins:
+    instantiates:
       - ValueMicroschemaDefinition
     class_uri: schema:QuantitativeValue
     description: >-
@@ -85,7 +85,7 @@ classes:
         description: Comparison operator (less than, greater than, etc.) or exact if null
 
   Timepoint:
-    mixins:
+    instantiates:
       - ValueMicroschemaDefinition
     description: >-
       A point in time, potentially relative
@@ -102,7 +102,7 @@ classes:
         description: Offset from event (e.g., "+3 days")
 
   TimeInterval:
-    mixins:
+    instantiates:
       - ValueMicroschemaDefinition
     description: >-
       A period between two timepoints
@@ -121,7 +121,7 @@ classes:
         description: Alternative to start/end
 
   CodedValue:
-    mixins:
+    instantiates:
       - ValueMicroschemaDefinition
     description: >-
       A value from a controlled vocabulary
@@ -142,7 +142,7 @@ classes:
   #────────────────────────────────────────────────────────────────
 
   MeasurementObservationCde:
-    mixins:
+    instantiates:
       - MicroschemaDefinition
     description: >-
       A data structure with key and value attributes that represents a single observation
@@ -165,7 +165,7 @@ classes:
       - age_at_observation
 
   ConditionStatusCde:
-    mixins:
+    instantiates:
       - MicroschemaDefinition
     description: >-
       Record suggesting the presence of a disease or medical condition stated as a diagnosis, sign, or symptom
@@ -180,7 +180,7 @@ classes:
       - age_at_condition_end
 
   DrugStatusCde:
-    mixins:
+    instantiates:
       - MicroschemaDefinition
     description: >-
       Record suggesting exposure to a medication
@@ -194,7 +194,7 @@ classes:
       - age_at_exposure_end
 
   ProcedureStatusCde:
-    mixins:
+    instantiates:
       - MicroschemaDefinition
     description: >-
       Record of activity or process ordered by or carried out by a healthcare provider for a diagnostic or therapeutic reason
@@ -207,7 +207,7 @@ classes:
       - age_at_procedure
 
   SdohObservationCde:
-    mixins:
+    instantiates:
       - MicroschemaDefinition
     description: >-
       A data structure with key and value attributes that represents a single SDOH observation
@@ -221,26 +221,6 @@ classes:
       - collected_by
       - data_type
       - age_at_observation
-
-  #────────────────────────────────────────────────────────────────
-  # CONTAINER: For collecting CDE instances
-  #────────────────────────────────────────────────────────────────
-
-  CdeCollection:
-    tree_root: true
-    description: >-
-      A holder for CDE objects
-    attributes:
-      entries:
-        description: The collection of CDE objects
-        any_of:
-          - range: MeasurementObservationCde
-          - range: ConditionStatusCde
-          - range: DrugStatusCde
-          - range: ProcedureStatusCde
-          - range: SdohObservationCde
-        multivalued: true
-        inlined_as_list: true
 
 #────────────────────────────────────────────────────────────────
 # SLOTS
