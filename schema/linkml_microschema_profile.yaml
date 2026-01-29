@@ -1,9 +1,13 @@
 name: linkml-microschema-profile
-description: This is a LinkML schema for CDEs
-title: linkml-microschema-profile
+description: 'A LinkML schema defining the Microschema Profile for composable data
+  elements.
+
+  Microschemas are designed for inline composition without identifiers.'
+title: LinkML Microschema Profile
 see_also:
 - https://linkml.github.io/linkml-microschema-profile
 id: https://w3id.org/linkml/linkml-microschema-profile
+version: 0.2.0
 imports:
 - linkml:types
 license: MIT
@@ -14,9 +18,6 @@ prefixes:
   linkml:
     prefix_prefix: linkml
     prefix_reference: https://w3id.org/linkml/
-  biolink:
-    prefix_prefix: biolink
-    prefix_reference: https://w3id.org/biolink/vocab/
   schema:
     prefix_prefix: schema
     prefix_reference: http://schema.org/
@@ -50,6 +51,9 @@ prefixes:
   RxNorm:
     prefix_prefix: RxNorm
     prefix_reference: http://purl.bioontology.org/ontology/RXNORM/
+  ISO11179:
+    prefix_prefix: ISO11179
+    prefix_reference: http://purl.org/iso11179/
   example:
     prefix_prefix: example
     prefix_reference: http://www.example.org/rdf#
@@ -458,43 +462,52 @@ enums:
         text: placeholder
         description: Placeholder value
 slots:
-  id:
-    name: id
-    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/id
-    description: A unique identifier for a thing
+  profile_version:
+    name: profile_version
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/profile_version
+    description: Version of microschema profile this conforms to
     from_schema: https://w3id.org/linkml/linkml-microschema-profile
-    mappings:
-    - schema:identifier
-    slot_uri: schema:identifier
-    identifier: true
-    owner: NamedThing
+    slot_uri: coms:profile_version
+    owner: MicroschemaDefinition
     domain_of:
-    - NamedThing
-    range: uriorcurie
-    required: true
-  name:
-    name: name
-    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/name
-    description: A human-readable name for a thing
-    from_schema: https://w3id.org/linkml/linkml-microschema-profile
-    mappings:
-    - schema:name
-    slot_uri: schema:name
-    owner: NamedThing
-    domain_of:
-    - NamedThing
+    - MicroschemaDefinition
     range: string
-  description:
-    name: description
-    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/description
-    description: A human-readable description for a thing
+  semantic_mapping:
+    name: semantic_mapping
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/semantic_mapping
+    description: URIs/CURIEs mapping this microschema to external standards (ISO-11179
+      DEC, NIH CDE, etc.)
     from_schema: https://w3id.org/linkml/linkml-microschema-profile
-    mappings:
-    - schema:description
-    slot_uri: schema:description
-    owner: NamedThing
+    slot_uri: coms:semantic_mapping
+    owner: MicroschemaDefinition
     domain_of:
-    - NamedThing
+    - MicroschemaDefinition
+    range: uriorcurie
+    multivalued: true
+  domain_of_use:
+    name: domain_of_use
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/domain_of_use
+    description: Domains where this microschema is applicable
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    slot_uri: coms:domain_of_use
+    owner: MicroschemaDefinition
+    domain_of:
+    - MicroschemaDefinition
+    range: string
+    multivalued: true
+  subject_identifier:
+    name: subject_identifier
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/subject_identifier
+    description: An identifier for the subject of the datum
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    slot_uri: coms:subject_identifier
+    owner: SdohObservationCde
+    domain_of:
+    - MeasurementObservationCde
+    - ConditionStatusCde
+    - DrugStatusCde
+    - ProcedureStatusCde
+    - SdohObservationCde
     range: string
   measurement_type:
     name: measurement_type
@@ -780,20 +793,6 @@ slots:
     range: Quantity
     inlined: true
     inlined_as_list: true
-  subject_identifier:
-    name: subject_identifier
-    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/subject_identifier
-    description: An identifier for the subject of the datum
-    from_schema: https://w3id.org/linkml/linkml-microschema-profile
-    slot_uri: coms:subject_identifier
-    owner: SdohObservationCde
-    domain_of:
-    - MeasurementObservationCde
-    - ConditionStatusCde
-    - DrugStatusCde
-    - ProcedureStatusCde
-    - SdohObservationCde
-    range: string
   quantity__value:
     name: quantity__value
     description: The numeric value
@@ -833,37 +832,52 @@ slots:
     - range: ProcedureStatusCde
     - range: SdohObservationCde
 classes:
-  NamedThing:
-    name: NamedThing
-    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/NamedThing
-    description: A generic grouping for any identifiable entity
+  MicroschemaDefinition:
+    name: MicroschemaDefinition
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/MicroschemaDefinition
+    description: A metaclass for classes that conform to the Microschema profile.
+      Classes that instantiate this are designed for inline composition.
+    comments:
+    - Classes instantiating this SHOULD NOT have identifier slots
+    - Classes instantiating this SHOULD be used with inlined=true
+    - Classes instantiating this MAY compose other microschemas via attributes
     from_schema: https://w3id.org/linkml/linkml-microschema-profile
     mappings:
-    - schema:Thing
+    - coms:MicroschemaDefinition
+    mixin: true
     slots:
-    - id
-    - name
-    - description
-    class_uri: schema:Thing
-  CdeThing:
-    name: CdeThing
-    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/CdeThing
-    description: Represents a CDE
+    - profile_version
+    - semantic_mapping
+    - domain_of_use
+    class_uri: coms:MicroschemaDefinition
+  ValueMicroschemaDefinition:
+    name: ValueMicroschemaDefinition
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/ValueMicroschemaDefinition
+    description: 'A microschema representing a typed value with optional unit/system.
+      Examples: Quantity, Timepoint, CodedValue, Range.'
     from_schema: https://w3id.org/linkml/linkml-microschema-profile
-    is_a: NamedThing
+    mappings:
+    - coms:ValueMicroschemaDefinition
+    is_a: MicroschemaDefinition
+    mixin: true
     slots:
-    - id
-    - name
-    - description
-    class_uri: coms:CdeThing
+    - profile_version
+    - semantic_mapping
+    - domain_of_use
+    class_uri: coms:ValueMicroschemaDefinition
   Quantity:
     name: Quantity
     definition_uri: https://w3id.org/linkml/linkml-microschema-profile/Quantity
     description: A value with a unit
     from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    mixins:
+    - ValueMicroschemaDefinition
     slots:
     - quantity__value
     - quantity__unit
+    - profile_version
+    - semantic_mapping
+    - domain_of_use
     attributes:
       value:
         name: value
@@ -882,11 +896,9 @@ classes:
     from_schema: https://w3id.org/linkml/linkml-microschema-profile
     mappings:
     - bdchm:MeasurementObservation
-    is_a: CdeThing
+    mixins:
+    - MicroschemaDefinition
     slots:
-    - id
-    - name
-    - description
     - subject_identifier
     - measurement_type
     - unit
@@ -902,6 +914,9 @@ classes:
     - collected_by
     - data_type
     - age_at_observation
+    - profile_version
+    - semantic_mapping
+    - domain_of_use
     class_uri: bdchm:MeasurementObservation
   ConditionStatusCde:
     name: ConditionStatusCde
@@ -911,11 +926,9 @@ classes:
     from_schema: https://w3id.org/linkml/linkml-microschema-profile
     mappings:
     - bdchm:Condition
-    is_a: CdeThing
+    mixins:
+    - MicroschemaDefinition
     slots:
-    - id
-    - name
-    - description
     - subject_identifier
     - condition_type
     - method
@@ -923,6 +936,9 @@ classes:
     - instrument
     - age_at_condition_start
     - age_at_condition_end
+    - profile_version
+    - semantic_mapping
+    - domain_of_use
     class_uri: bdchm:Condition
   DrugStatusCde:
     name: DrugStatusCde
@@ -931,50 +947,50 @@ classes:
     from_schema: https://w3id.org/linkml/linkml-microschema-profile
     mappings:
     - bdchm:DrugExposure
-    is_a: CdeThing
+    mixins:
+    - MicroschemaDefinition
     slots:
-    - id
-    - name
-    - description
     - subject_identifier
     - drug_type
     - method
     - collected_by
     - age_at_exposure_start
     - age_at_exposure_end
+    - profile_version
+    - semantic_mapping
+    - domain_of_use
     class_uri: bdchm:DrugExposure
   ProcedureStatusCde:
     name: ProcedureStatusCde
     definition_uri: https://w3id.org/linkml/linkml-microschema-profile/ProcedureStatusCde
     description: Record of activity or process ordered by or carried out by a healthcare
-      provider for a diagnostic or theraputic reason
+      provider for a diagnostic or therapeutic reason
     from_schema: https://w3id.org/linkml/linkml-microschema-profile
     mappings:
     - bdchm:Procedure
-    is_a: CdeThing
+    mixins:
+    - MicroschemaDefinition
     slots:
-    - id
-    - name
-    - description
     - subject_identifier
     - procedure_type
     - method
     - collected_by
     - age_at_procedure
+    - profile_version
+    - semantic_mapping
+    - domain_of_use
     class_uri: bdchm:Procedure
   SdohObservationCde:
     name: SdohObservationCde
     definition_uri: https://w3id.org/linkml/linkml-microschema-profile/SdohObservationCde
     description: A data structure with key and value attributes that represents a
-      single Sdoh observation
+      single SDOH observation
     from_schema: https://w3id.org/linkml/linkml-microschema-profile
     mappings:
     - bdchm:SdohObservation
-    is_a: CdeThing
+    mixins:
+    - MicroschemaDefinition
     slots:
-    - id
-    - name
-    - description
     - subject_identifier
     - sdoh_type
     - unit
@@ -983,6 +999,9 @@ classes:
     - collected_by
     - data_type
     - age_at_observation
+    - profile_version
+    - semantic_mapping
+    - domain_of_use
     class_uri: bdchm:SdohObservation
   CdeCollection:
     name: CdeCollection
@@ -1007,7 +1026,7 @@ classes:
     tree_root: true
 metamodel_version: 1.7.0
 source_file: linkml_microschema_profile.yaml
-source_file_date: '2026-01-29T15:54:33'
-source_file_size: 9240
-generation_date: '2026-01-29T15:54:46'
+source_file_date: '2026-01-29T16:02:13'
+source_file_size: 12831
+generation_date: '2026-01-29T16:02:26'
 

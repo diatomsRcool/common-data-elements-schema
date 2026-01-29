@@ -25,10 +25,6 @@
          <lastmod>2026-01-29</lastmod>
     </url>
     <url>
-         <loc>https://linkml.github.io/linkml-microschema-profile/elements/CdeThing/</loc>
-         <lastmod>2026-01-29</lastmod>
-    </url>
-    <url>
          <loc>https://linkml.github.io/linkml-microschema-profile/elements/CollectedByEnum/</loc>
          <lastmod>2026-01-29</lastmod>
     </url>
@@ -105,7 +101,7 @@
          <lastmod>2026-01-29</lastmod>
     </url>
     <url>
-         <loc>https://linkml.github.io/linkml-microschema-profile/elements/NamedThing/</loc>
+         <loc>https://linkml.github.io/linkml-microschema-profile/elements/MicroschemaDefinition/</loc>
          <lastmod>2026-01-29</lastmod>
     </url>
     <url>
@@ -154,6 +150,10 @@
     </url>
     <url>
          <loc>https://linkml.github.io/linkml-microschema-profile/elements/Uriorcurie/</loc>
+         <lastmod>2026-01-29</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/linkml-microschema-profile/elements/ValueMicroschemaDefinition/</loc>
          <lastmod>2026-01-29</lastmod>
     </url>
     <url>
@@ -209,11 +209,11 @@
          <lastmod>2026-01-29</lastmod>
     </url>
     <url>
-         <loc>https://linkml.github.io/linkml-microschema-profile/elements/description/</loc>
+         <loc>https://linkml.github.io/linkml-microschema-profile/elements/diagnosis_method/</loc>
          <lastmod>2026-01-29</lastmod>
     </url>
     <url>
-         <loc>https://linkml.github.io/linkml-microschema-profile/elements/diagnosis_method/</loc>
+         <loc>https://linkml.github.io/linkml-microschema-profile/elements/domain_of_use/</loc>
          <lastmod>2026-01-29</lastmod>
     </url>
     <url>
@@ -222,10 +222,6 @@
     </url>
     <url>
          <loc>https://linkml.github.io/linkml-microschema-profile/elements/entries/</loc>
-         <lastmod>2026-01-29</lastmod>
-    </url>
-    <url>
-         <loc>https://linkml.github.io/linkml-microschema-profile/elements/id/</loc>
          <lastmod>2026-01-29</lastmod>
     </url>
     <url>
@@ -249,11 +245,11 @@
          <lastmod>2026-01-29</lastmod>
     </url>
     <url>
-         <loc>https://linkml.github.io/linkml-microschema-profile/elements/name/</loc>
+         <loc>https://linkml.github.io/linkml-microschema-profile/elements/procedure_type/</loc>
          <lastmod>2026-01-29</lastmod>
     </url>
     <url>
-         <loc>https://linkml.github.io/linkml-microschema-profile/elements/procedure_type/</loc>
+         <loc>https://linkml.github.io/linkml-microschema-profile/elements/profile_version/</loc>
          <lastmod>2026-01-29</lastmod>
     </url>
     <url>
@@ -262,6 +258,10 @@
     </url>
     <url>
          <loc>https://linkml.github.io/linkml-microschema-profile/elements/sdoh_type/</loc>
+         <lastmod>2026-01-29</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/linkml-microschema-profile/elements/semantic_mapping/</loc>
          <lastmod>2026-01-29</lastmod>
     </url>
     <url>

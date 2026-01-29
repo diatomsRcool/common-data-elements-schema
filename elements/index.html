@@ -505,8 +505,9 @@
   
 
 
-<h1 id="linkml-microschema-profile">linkml-microschema-profile</h1>
-<p>This is a LinkML schema for CDEs</p>
+<h1 id="linkml-microschema-profile">LinkML Microschema Profile</h1>
+<p>A LinkML schema defining the Microschema Profile for composable data elements.
+Microschemas are designed for inline composition without identifiers.</p>
 <p>URI: https://w3id.org/linkml/linkml-microschema-profile</p>
 <p>Name: linkml-microschema-profile</p>
 <h2 id="classes">Classes</h2>
@@ -523,36 +524,36 @@
 <td>A holder for CDE objects</td>
 </tr>
 <tr>
-<td><a href="NamedThing/">NamedThing</a></td>
-<td>A generic grouping for any identifiable entity</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CdeThing/">CdeThing</a></td>
-<td>Represents a CDE</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="ConditionStatusCde/">ConditionStatusCde</a></td>
+<td><a href="ConditionStatusCde/">ConditionStatusCde</a></td>
 <td>Record suggesting the presence of a disease or medical condition stated as a ...</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="DrugStatusCde/">DrugStatusCde</a></td>
+<td><a href="DrugStatusCde/">DrugStatusCde</a></td>
 <td>Record suggesting exposure to a medication</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MeasurementObservationCde/">MeasurementObservationCde</a></td>
+<td><a href="MeasurementObservationCde/">MeasurementObservationCde</a></td>
 <td>A data structure with key and value attributes that represents a single obser...</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="ProcedureStatusCde/">ProcedureStatusCde</a></td>
-<td>Record of activity or process ordered by or carried out by a healthcare provi...</td>
+<td><a href="MicroschemaDefinition/">MicroschemaDefinition</a></td>
+<td>A metaclass for classes that conform to the Microschema profile</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="SdohObservationCde/">SdohObservationCde</a></td>
-<td>A data structure with key and value attributes that represents a single Sdoh ...</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="ValueMicroschemaDefinition/">ValueMicroschemaDefinition</a></td>
+<td>A microschema representing a typed value with optional unit/system</td>
+</tr>
+<tr>
+<td><a href="ProcedureStatusCde/">ProcedureStatusCde</a></td>
+<td>Record of activity or process ordered by or carried out by a healthcare provi...</td>
 </tr>
 <tr>
 <td><a href="Quantity/">Quantity</a></td>
 <td>A value with a unit</td>
+</tr>
+<tr>
+<td><a href="SdohObservationCde/">SdohObservationCde</a></td>
+<td>A data structure with key and value attributes that represents a single SDOH ...</td>
 </tr>
 </tbody>
 </table>
@@ -618,12 +619,12 @@
 <td>The data type of the observation</td>
 </tr>
 <tr>
-<td><a href="description/">description</a></td>
-<td>A human-readable description for a thing</td>
-</tr>
-<tr>
 <td><a href="diagnosis_method/">diagnosis_method</a></td>
 <td>The method used for diagnosis</td>
+</tr>
+<tr>
+<td><a href="domain_of_use/">domain_of_use</a></td>
+<td>Domains where this microschema is applicable</td>
 </tr>
 <tr>
 <td><a href="drug_type/">drug_type</a></td>
@@ -632,10 +633,6 @@
 <tr>
 <td><a href="entries/">entries</a></td>
 <td>The collection of CDE objects</td>
-</tr>
-<tr>
-<td><a href="id/">id</a></td>
-<td>A unique identifier for a thing</td>
 </tr>
 <tr>
 <td><a href="instrument/">instrument</a></td>
@@ -654,12 +651,12 @@
 <td>The method used for the measurement</td>
 </tr>
 <tr>
-<td><a href="name/">name</a></td>
-<td>A human-readable name for a thing</td>
-</tr>
-<tr>
 <td><a href="procedure_type/">procedure_type</a></td>
 <td>A CURIE from OMOP</td>
+</tr>
+<tr>
+<td><a href="profile_version/">profile_version</a></td>
+<td>Version of microschema profile this conforms to</td>
 </tr>
 <tr>
 <td><a href="reagent_kit/">reagent_kit</a></td>
@@ -668,6 +665,10 @@
 <tr>
 <td><a href="sdoh_type/">sdoh_type</a></td>
 <td>The type of SDOH observation</td>
+</tr>
+<tr>
+<td><a href="semantic_mapping/">semantic_mapping</a></td>
+<td>URIs/CURIEs mapping this microschema to external standards (ISO-11179 DEC, NI...</td>
 </tr>
 <tr>
 <td><a href="subject_identifier/">subject_identifier</a></td>

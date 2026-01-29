@@ -5,10 +5,10 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="https://linkml.github.io/linkml-microschema-profile/elements/CdeThing/" rel="canonical"/>
+<link href="https://linkml.github.io/linkml-microschema-profile/elements/ValueMicroschemaDefinition/" rel="canonical"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.7.1" name="generator"/>
-<title>Class: CdeThing - linkml-microschema-profile</title>
+<title>Class: ValueMicroschemaDefinition - linkml-microschema-profile</title>
 <link href="../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -23,7 +23,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#class-cdething">
+<a class="md-skip" href="#class-valuemicroschemadefinition">
           Skip to content
         </a>
 </div>
@@ -47,7 +47,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Class: CdeThing
+              Class: ValueMicroschemaDefinition
             
           </span>
 </div>
@@ -189,6 +189,15 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#mixin-usage">
+<span class="md-ellipsis">
+      
+        Mixin Usage
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#identifier-and-mapping-information">
 <span class="md-ellipsis">
       
@@ -257,47 +266,32 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="class-cdething">Class: CdeThing</h1>
-<p><em>Represents a CDE</em></p>
-<p>URI: <a href="https://w3id.org/linkml/linkml-microschema-profile/CdeThing">coms:CdeThing</a></p>
+<h1 id="class-valuemicroschemadefinition">Class: ValueMicroschemaDefinition</h1>
+<p><em>A microschema representing a typed value with optional unit/system. Examples: Quantity, Timepoint, CodedValue, Range.</em></p>
+<p>URI: <a href="https://w3id.org/linkml/linkml-microschema-profile/ValueMicroschemaDefinition">coms:ValueMicroschemaDefinition</a></p>
 <div class="mermaid"> classDiagram
-    class CdeThing
-    click CdeThing href "../CdeThing/"
-      NamedThing &lt;|-- CdeThing
-        click NamedThing href "../NamedThing/"
+    class ValueMicroschemaDefinition
+    click ValueMicroschemaDefinition href "../ValueMicroschemaDefinition/"
+      MicroschemaDefinition &lt;|-- ValueMicroschemaDefinition
+        click MicroschemaDefinition href "../MicroschemaDefinition/"
 
 
-      CdeThing &lt;|-- MeasurementObservationCde
-        click MeasurementObservationCde href "../MeasurementObservationCde/"
-      CdeThing &lt;|-- ConditionStatusCde
-        click ConditionStatusCde href "../ConditionStatusCde/"
-      CdeThing &lt;|-- DrugStatusCde
-        click DrugStatusCde href "../DrugStatusCde/"
-      CdeThing &lt;|-- ProcedureStatusCde
-        click ProcedureStatusCde href "../ProcedureStatusCde/"
-      CdeThing &lt;|-- SdohObservationCde
-        click SdohObservationCde href "../SdohObservationCde/"
+      ValueMicroschemaDefinition &lt;|-- Quantity
+        click Quantity href "../Quantity/"
 
 
-      CdeThing : description
+      ValueMicroschemaDefinition : domain_of_use
 
-      CdeThing : id
+      ValueMicroschemaDefinition : profile_version
 
-      CdeThing : name
+      ValueMicroschemaDefinition : semantic_mapping
 
 
 </div>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
-<li><a href="../NamedThing/">NamedThing</a><ul>
-<li><strong>CdeThing</strong><ul>
-<li><a href="../MeasurementObservationCde/">MeasurementObservationCde</a></li>
-<li><a href="../ConditionStatusCde/">ConditionStatusCde</a></li>
-<li><a href="../DrugStatusCde/">DrugStatusCde</a></li>
-<li><a href="../ProcedureStatusCde/">ProcedureStatusCde</a></li>
-<li><a href="../SdohObservationCde/">SdohObservationCde</a></li>
-</ul>
-</li>
+<li><a href="../MicroschemaDefinition/">MicroschemaDefinition</a><ul>
+<li><strong>ValueMicroschemaDefinition</strong></li>
 </ul>
 </li>
 </ul>
@@ -313,22 +307,37 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../id/">id</a></td>
-<td>1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td>A unique identifier for a thing</td>
-<td><a href="../NamedThing/">NamedThing</a></td>
+<td><a href="../profile_version/">profile_version</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Version of microschema profile this conforms to</td>
+<td><a href="../MicroschemaDefinition/">MicroschemaDefinition</a></td>
 </tr>
 <tr>
-<td><a href="../name/">name</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>A human-readable name for a thing</td>
-<td><a href="../NamedThing/">NamedThing</a></td>
+<td><a href="../semantic_mapping/">semantic_mapping</a></td>
+<td>* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>URIs/CURIEs mapping this microschema to external standards (ISO-11179 DEC, NI...</td>
+<td><a href="../MicroschemaDefinition/">MicroschemaDefinition</a></td>
 </tr>
 <tr>
-<td><a href="../description/">description</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>A human-readable description for a thing</td>
-<td><a href="../NamedThing/">NamedThing</a></td>
+<td><a href="../domain_of_use/">domain_of_use</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>Domains where this microschema is applicable</td>
+<td><a href="../MicroschemaDefinition/">MicroschemaDefinition</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="mixin-usage">Mixin Usage</h2>
+<table>
+<thead>
+<tr>
+<th>mixed into</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../Quantity/">Quantity</a></td>
+<td>A value with a unit</td>
 </tr>
 </tbody>
 </table>
@@ -348,11 +357,11 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>coms:CdeThing</td>
+<td>coms:ValueMicroschemaDefinition</td>
 </tr>
 <tr>
 <td>native</td>
-<td>coms:CdeThing</td>
+<td>coms:ValueMicroschemaDefinition</td>
 </tr>
 </tbody>
 </table>
@@ -360,55 +369,59 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: CdeThing
-description: Represents a CDE
+<pre><code class="language-yaml">name: ValueMicroschemaDefinition
+description: 'A microschema representing a typed value with optional unit/system.
+  Examples: Quantity, Timepoint, CodedValue, Range.'
 from_schema: https://w3id.org/linkml/linkml-microschema-profile
-is_a: NamedThing
+is_a: MicroschemaDefinition
+mixin: true
+class_uri: coms:ValueMicroschemaDefinition
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: CdeThing
-description: Represents a CDE
+<pre><code class="language-yaml">name: ValueMicroschemaDefinition
+description: 'A microschema representing a typed value with optional unit/system.
+  Examples: Quantity, Timepoint, CodedValue, Range.'
 from_schema: https://w3id.org/linkml/linkml-microschema-profile
-is_a: NamedThing
+is_a: MicroschemaDefinition
+mixin: true
 attributes:
-  id:
-    name: id
-    description: A unique identifier for a thing
+  profile_version:
+    name: profile_version
+    description: Version of microschema profile this conforms to
     from_schema: https://w3id.org/linkml/linkml-microschema-profile
     rank: 1000
-    slot_uri: schema:identifier
-    identifier: true
-    alias: id
-    owner: CdeThing
+    alias: profile_version
+    owner: ValueMicroschemaDefinition
     domain_of:
-    - NamedThing
+    - MicroschemaDefinition
+    range: string
+  semantic_mapping:
+    name: semantic_mapping
+    description: URIs/CURIEs mapping this microschema to external standards (ISO-11179
+      DEC, NIH CDE, etc.)
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    rank: 1000
+    alias: semantic_mapping
+    owner: ValueMicroschemaDefinition
+    domain_of:
+    - MicroschemaDefinition
     range: uriorcurie
-    required: true
-  name:
-    name: name
-    description: A human-readable name for a thing
+    multivalued: true
+  domain_of_use:
+    name: domain_of_use
+    description: Domains where this microschema is applicable
     from_schema: https://w3id.org/linkml/linkml-microschema-profile
     rank: 1000
-    slot_uri: schema:name
-    alias: name
-    owner: CdeThing
+    alias: domain_of_use
+    owner: ValueMicroschemaDefinition
     domain_of:
-    - NamedThing
+    - MicroschemaDefinition
     range: string
-  description:
-    name: description
-    description: A human-readable description for a thing
-    from_schema: https://w3id.org/linkml/linkml-microschema-profile
-    rank: 1000
-    slot_uri: schema:description
-    alias: description
-    owner: CdeThing
-    domain_of:
-    - NamedThing
-    range: string
+    multivalued: true
+class_uri: coms:ValueMicroschemaDefinition
 
 </code></pre>
 </details>

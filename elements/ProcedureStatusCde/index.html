@@ -267,13 +267,13 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-procedurestatuscde">Class: ProcedureStatusCde</h1>
-<p><em>Record of activity or process ordered by or carried out by a healthcare provider for a diagnostic or theraputic reason</em></p>
+<p><em>Record of activity or process ordered by or carried out by a healthcare provider for a diagnostic or therapeutic reason</em></p>
 <p>URI: <a href="https://w3id.org/bdchm/Procedure">bdchm:Procedure</a></p>
 <div class="mermaid"> classDiagram
     class ProcedureStatusCde
     click ProcedureStatusCde href "../ProcedureStatusCde/"
-      CdeThing &lt;|-- ProcedureStatusCde
-        click CdeThing href "../CdeThing/"
+      MicroschemaDefinition &lt;|-- ProcedureStatusCde
+        click MicroschemaDefinition href "../MicroschemaDefinition/"
 
       ProcedureStatusCde : age_at_procedure
 
@@ -297,9 +297,7 @@
 
 
 
-      ProcedureStatusCde : description
-
-      ProcedureStatusCde : id
+      ProcedureStatusCde : domain_of_use
 
       ProcedureStatusCde : method
 
@@ -312,9 +310,11 @@
 
 
 
-      ProcedureStatusCde : name
-
       ProcedureStatusCde : procedure_type
+
+      ProcedureStatusCde : profile_version
+
+      ProcedureStatusCde : semantic_mapping
 
       ProcedureStatusCde : subject_identifier
 
@@ -322,13 +322,7 @@
 </div>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
-<li><a href="../NamedThing/">NamedThing</a><ul>
-<li><a href="../CdeThing/">CdeThing</a><ul>
-<li><strong>ProcedureStatusCde</strong></li>
-</ul>
-</li>
-</ul>
-</li>
+<li><strong>ProcedureStatusCde</strong> [ <a href="../MicroschemaDefinition/">MicroschemaDefinition</a>]</li>
 </ul>
 <h2 id="slots">Slots</h2>
 <table>
@@ -372,22 +366,22 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../id/">id</a></td>
-<td>1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td>A unique identifier for a thing</td>
-<td><a href="../NamedThing/">NamedThing</a></td>
+<td><a href="../profile_version/">profile_version</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Version of microschema profile this conforms to</td>
+<td><a href="../MicroschemaDefinition/">MicroschemaDefinition</a></td>
 </tr>
 <tr>
-<td><a href="../name/">name</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>A human-readable name for a thing</td>
-<td><a href="../NamedThing/">NamedThing</a></td>
+<td><a href="../semantic_mapping/">semantic_mapping</a></td>
+<td>* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>URIs/CURIEs mapping this microschema to external standards (ISO-11179 DEC, NI...</td>
+<td><a href="../MicroschemaDefinition/">MicroschemaDefinition</a></td>
 </tr>
 <tr>
-<td><a href="../description/">description</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>A human-readable description for a thing</td>
-<td><a href="../NamedThing/">NamedThing</a></td>
+<td><a href="../domain_of_use/">domain_of_use</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>Domains where this microschema is applicable</td>
+<td><a href="../MicroschemaDefinition/">MicroschemaDefinition</a></td>
 </tr>
 </tbody>
 </table>
@@ -440,9 +434,10 @@
 <details>
 <pre><code class="language-yaml">name: ProcedureStatusCde
 description: Record of activity or process ordered by or carried out by a healthcare
-  provider for a diagnostic or theraputic reason
+  provider for a diagnostic or therapeutic reason
 from_schema: https://w3id.org/linkml/linkml-microschema-profile
-is_a: CdeThing
+mixins:
+- MicroschemaDefinition
 slots:
 - subject_identifier
 - procedure_type
@@ -457,9 +452,10 @@ class_uri: bdchm:Procedure
 <details>
 <pre><code class="language-yaml">name: ProcedureStatusCde
 description: Record of activity or process ordered by or carried out by a healthcare
-  provider for a diagnostic or theraputic reason
+  provider for a diagnostic or therapeutic reason
 from_schema: https://w3id.org/linkml/linkml-microschema-profile
-is_a: CdeThing
+mixins:
+- MicroschemaDefinition
 attributes:
   subject_identifier:
     name: subject_identifier
@@ -524,41 +520,39 @@ attributes:
     domain_of:
     - ProcedureStatusCde
     range: Quantity
-  id:
-    name: id
-    description: A unique identifier for a thing
+  profile_version:
+    name: profile_version
+    description: Version of microschema profile this conforms to
     from_schema: https://w3id.org/linkml/linkml-microschema-profile
     rank: 1000
-    slot_uri: schema:identifier
-    identifier: true
-    alias: id
+    alias: profile_version
     owner: ProcedureStatusCde
     domain_of:
-    - NamedThing
+    - MicroschemaDefinition
+    range: string
+  semantic_mapping:
+    name: semantic_mapping
+    description: URIs/CURIEs mapping this microschema to external standards (ISO-11179
+      DEC, NIH CDE, etc.)
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    rank: 1000
+    alias: semantic_mapping
+    owner: ProcedureStatusCde
+    domain_of:
+    - MicroschemaDefinition
     range: uriorcurie
-    required: true
-  name:
-    name: name
-    description: A human-readable name for a thing
+    multivalued: true
+  domain_of_use:
+    name: domain_of_use
+    description: Domains where this microschema is applicable
     from_schema: https://w3id.org/linkml/linkml-microschema-profile
     rank: 1000
-    slot_uri: schema:name
-    alias: name
+    alias: domain_of_use
     owner: ProcedureStatusCde
     domain_of:
-    - NamedThing
+    - MicroschemaDefinition
     range: string
-  description:
-    name: description
-    description: A human-readable description for a thing
-    from_schema: https://w3id.org/linkml/linkml-microschema-profile
-    rank: 1000
-    slot_uri: schema:description
-    alias: description
-    owner: ProcedureStatusCde
-    domain_of:
-    - NamedThing
-    range: string
+    multivalued: true
 class_uri: bdchm:Procedure
 
 </code></pre>

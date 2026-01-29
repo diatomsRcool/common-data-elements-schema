@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://linkml.github.io/linkml-microschema-profile/elements/id/">
+        <link rel="canonical" href="https://linkml.github.io/linkml-microschema-profile/elements/profile_version/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>Slot: id - linkml-microschema-profile</title>
+        <title>Slot: profile_version - linkml-microschema-profile</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-id" class="md-skip">
+        <a href="#slot-profile_version" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: id
+              Slot: profile_version
             
           </span>
         </div>
@@ -416,10 +416,10 @@
   
 
 
-<h1 id="slot-id">Slot: id</h1>
-<p><em>A unique identifier for a thing</em></p>
-<p>URI: <a href="http://schema.org/identifier">schema:identifier</a>
-Alias: id</p>
+<h1 id="slot-profile_version">Slot: profile_version</h1>
+<p><em>Version of microschema profile this conforms to</em></p>
+<p>URI: <a href="https://w3id.org/linkml/linkml-microschema-profile/profile_version">coms:profile_version</a>
+Alias: profile_version</p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -438,8 +438,23 @@ Alias: id</p>
 <td>no</td>
 </tr>
 <tr>
+<td><a href="../MicroschemaDefinition/">MicroschemaDefinition</a></td>
+<td>A metaclass for classes that conform to the Microschema profile</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../ValueMicroschemaDefinition/">ValueMicroschemaDefinition</a></td>
+<td>A microschema representing a typed value with optional unit/system</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Quantity/">Quantity</a></td>
+<td>A value with a unit</td>
+<td>no</td>
+</tr>
+<tr>
 <td><a href="../SdohObservationCde/">SdohObservationCde</a></td>
-<td>A data structure with key and value attributes that represents a single Sdoh ...</td>
+<td>A data structure with key and value attributes that represents a single SDOH ...</td>
 <td>no</td>
 </tr>
 <tr>
@@ -448,8 +463,8 @@ Alias: id</p>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../NamedThing/">NamedThing</a></td>
-<td>A generic grouping for any identifiable entity</td>
+<td><a href="../ProcedureStatusCde/">ProcedureStatusCde</a></td>
+<td>Record of activity or process ordered by or carried out by a healthcare provi...</td>
 <td>no</td>
 </tr>
 <tr>
@@ -457,26 +472,11 @@ Alias: id</p>
 <td>Record suggesting exposure to a medication</td>
 <td>no</td>
 </tr>
-<tr>
-<td><a href="../CdeThing/">CdeThing</a></td>
-<td>Represents a CDE</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../ProcedureStatusCde/">ProcedureStatusCde</a></td>
-<td>Record of activity or process ordered by or carried out by a healthcare provi...</td>
-<td>no</td>
-</tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>
-<p>Range: <a href="../Uriorcurie/">Uriorcurie</a></p>
-</li>
-<li>
-<p>Required: True</p>
-</li>
+<li>Range: <a href="../String/">String</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -494,28 +494,25 @@ Alias: id</p>
 <tbody>
 <tr>
 <td>self</td>
-<td>schema:identifier</td>
+<td>coms:profile_version</td>
 </tr>
 <tr>
 <td>native</td>
-<td>coms:id</td>
+<td>coms:profile_version</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: id
-description: A unique identifier for a thing
+<pre><code class="language-yaml">name: profile_version
+description: Version of microschema profile this conforms to
 from_schema: https://w3id.org/linkml/linkml-microschema-profile
 rank: 1000
-slot_uri: schema:identifier
-identifier: true
-alias: id
+alias: profile_version
 domain_of:
-- NamedThing
-range: uriorcurie
-required: true
+- MicroschemaDefinition
+range: string
 
 </code></pre>
 
