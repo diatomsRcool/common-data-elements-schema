@@ -68,15 +68,74 @@ classes:
   Quantity:
     mixins:
       - ValueMicroschemaDefinition
+    class_uri: schema:QuantitativeValue
     description: >-
-      A value with a unit
+      A value with optional unit
     attributes:
       value:
         range: decimal
+        required: true
         description: The numeric value
       unit:
         range: uriorcurie
-        description: A unit from UCUM
+        slot_uri: schema:unitCode
+        description: Unit (UCUM, UO, QUDT, etc.)
+      comparator:
+        range: ComparatorEnum
+        description: Comparison operator (less than, greater than, etc.) or exact if null
+
+  Timepoint:
+    mixins:
+      - ValueMicroschemaDefinition
+    description: >-
+      A point in time, potentially relative
+    attributes:
+      datetime:
+        range: datetime
+        description: Absolute timestamp
+      relative_to_event:
+        range: uriorcurie
+        description: Event this is relative to
+      offset:
+        range: Quantity
+        inlined: true
+        description: Offset from event (e.g., "+3 days")
+
+  TimeInterval:
+    mixins:
+      - ValueMicroschemaDefinition
+    description: >-
+      A period between two timepoints
+    attributes:
+      start:
+        range: Timepoint
+        inlined: true
+        description: Start of the interval
+      end:
+        range: Timepoint
+        inlined: true
+        description: End of the interval
+      duration:
+        range: Quantity
+        inlined: true
+        description: Alternative to start/end
+
+  CodedValue:
+    mixins:
+      - ValueMicroschemaDefinition
+    description: >-
+      A value from a controlled vocabulary
+    attributes:
+      code:
+        range: uriorcurie
+        required: true
+        description: The code value as a CURIE
+      label:
+        range: string
+        description: Human-readable label for the code
+      system:
+        range: uriorcurie
+        description: The code system URI
 
   #────────────────────────────────────────────────────────────────
   # CDE MICROSCHEMAS: Domain-specific composable data elements
@@ -294,6 +353,22 @@ slots:
 #────────────────────────────────────────────────────────────────
 
 enums:
+  ComparatorEnum:
+    description: Comparator for quantity values
+    permissible_values:
+      lt:
+        description: Less than
+        meaning: coms:lt
+      le:
+        description: Less than or equal to
+        meaning: coms:le
+      ge:
+        description: Greater than or equal to
+        meaning: coms:ge
+      gt:
+        description: Greater than
+        meaning: coms:gt
+
   DataTypeEnum:
     description: The data type of an observation value
     permissible_values:
