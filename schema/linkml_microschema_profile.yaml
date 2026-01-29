@@ -329,6 +329,28 @@ types:
     uri: xsd:string
     repr: str
 enums:
+  ComparatorEnum:
+    name: ComparatorEnum
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/ComparatorEnum
+    description: Comparator for quantity values
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    permissible_values:
+      lt:
+        text: lt
+        description: Less than
+        meaning: coms:lt
+      le:
+        text: le
+        description: Less than or equal to
+        meaning: coms:le
+      ge:
+        text: ge
+        description: Greater than or equal to
+        meaning: coms:ge
+      gt:
+        text: gt
+        description: Greater than
+        meaning: coms:gt
   DataTypeEnum:
     name: DataTypeEnum
     definition_uri: https://w3id.org/linkml/linkml-microschema-profile/DataTypeEnum
@@ -803,15 +825,127 @@ slots:
     domain_of:
     - Quantity
     range: decimal
+    required: true
   quantity__unit:
     name: quantity__unit
-    description: A unit from UCUM
+    description: Unit (UCUM, UO, QUDT, etc.)
     from_schema: https://w3id.org/linkml/linkml-microschema-profile
-    slot_uri: coms:unit
+    mappings:
+    - schema:unitCode
+    slot_uri: schema:unitCode
     alias: unit
     owner: Quantity
     domain_of:
     - Quantity
+    range: uriorcurie
+  quantity__comparator:
+    name: quantity__comparator
+    description: Comparison operator (less than, greater than, etc.) or exact if null
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    slot_uri: coms:comparator
+    alias: comparator
+    owner: Quantity
+    domain_of:
+    - Quantity
+    range: ComparatorEnum
+  timepoint__datetime:
+    name: timepoint__datetime
+    description: Absolute timestamp
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    slot_uri: coms:datetime
+    alias: datetime
+    owner: Timepoint
+    domain_of:
+    - Timepoint
+    range: datetime
+  timepoint__relative_to_event:
+    name: timepoint__relative_to_event
+    description: Event this is relative to
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    slot_uri: coms:relative_to_event
+    alias: relative_to_event
+    owner: Timepoint
+    domain_of:
+    - Timepoint
+    range: uriorcurie
+  timepoint__offset:
+    name: timepoint__offset
+    description: Offset from event (e.g., "+3 days")
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    slot_uri: coms:offset
+    alias: offset
+    owner: Timepoint
+    domain_of:
+    - Timepoint
+    range: Quantity
+    inlined: true
+    inlined_as_list: true
+  timeInterval__start:
+    name: timeInterval__start
+    description: Start of the interval
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    slot_uri: coms:start
+    alias: start
+    owner: TimeInterval
+    domain_of:
+    - TimeInterval
+    range: Timepoint
+    inlined: true
+    inlined_as_list: true
+  timeInterval__end:
+    name: timeInterval__end
+    description: End of the interval
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    slot_uri: coms:end
+    alias: end
+    owner: TimeInterval
+    domain_of:
+    - TimeInterval
+    range: Timepoint
+    inlined: true
+    inlined_as_list: true
+  timeInterval__duration:
+    name: timeInterval__duration
+    description: Alternative to start/end
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    slot_uri: coms:duration
+    alias: duration
+    owner: TimeInterval
+    domain_of:
+    - TimeInterval
+    range: Quantity
+    inlined: true
+    inlined_as_list: true
+  codedValue__code:
+    name: codedValue__code
+    description: The code value as a CURIE
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    slot_uri: coms:code
+    alias: code
+    owner: CodedValue
+    domain_of:
+    - CodedValue
+    range: uriorcurie
+    required: true
+  codedValue__label:
+    name: codedValue__label
+    description: Human-readable label for the code
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    slot_uri: coms:label
+    alias: label
+    owner: CodedValue
+    domain_of:
+    - CodedValue
+    range: string
+  codedValue__system:
+    name: codedValue__system
+    description: The code system URI
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    slot_uri: coms:system
+    alias: system
+    owner: CodedValue
+    domain_of:
+    - CodedValue
     range: uriorcurie
   cdeCollection__entries:
     name: cdeCollection__entries
@@ -868,13 +1002,16 @@ classes:
   Quantity:
     name: Quantity
     definition_uri: https://w3id.org/linkml/linkml-microschema-profile/Quantity
-    description: A value with a unit
+    description: A value with optional unit
     from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    mappings:
+    - schema:QuantitativeValue
     mixins:
     - ValueMicroschemaDefinition
     slots:
     - quantity__value
     - quantity__unit
+    - quantity__comparator
     - profile_version
     - semantic_mapping
     - domain_of_use
@@ -883,11 +1020,107 @@ classes:
         name: value
         description: The numeric value
         range: decimal
+        required: true
       unit:
         name: unit
-        description: A unit from UCUM
+        description: Unit (UCUM, UO, QUDT, etc.)
+        slot_uri: schema:unitCode
         range: uriorcurie
-    class_uri: coms:Quantity
+      comparator:
+        name: comparator
+        description: Comparison operator (less than, greater than, etc.) or exact
+          if null
+        range: ComparatorEnum
+    class_uri: schema:QuantitativeValue
+  Timepoint:
+    name: Timepoint
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/Timepoint
+    description: A point in time, potentially relative
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    mixins:
+    - ValueMicroschemaDefinition
+    slots:
+    - timepoint__datetime
+    - timepoint__relative_to_event
+    - timepoint__offset
+    - profile_version
+    - semantic_mapping
+    - domain_of_use
+    attributes:
+      datetime:
+        name: datetime
+        description: Absolute timestamp
+        range: datetime
+      relative_to_event:
+        name: relative_to_event
+        description: Event this is relative to
+        range: uriorcurie
+      offset:
+        name: offset
+        description: Offset from event (e.g., "+3 days")
+        range: Quantity
+        inlined: true
+    class_uri: coms:Timepoint
+  TimeInterval:
+    name: TimeInterval
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/TimeInterval
+    description: A period between two timepoints
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    mixins:
+    - ValueMicroschemaDefinition
+    slots:
+    - timeInterval__start
+    - timeInterval__end
+    - timeInterval__duration
+    - profile_version
+    - semantic_mapping
+    - domain_of_use
+    attributes:
+      start:
+        name: start
+        description: Start of the interval
+        range: Timepoint
+        inlined: true
+      end:
+        name: end
+        description: End of the interval
+        range: Timepoint
+        inlined: true
+      duration:
+        name: duration
+        description: Alternative to start/end
+        range: Quantity
+        inlined: true
+    class_uri: coms:TimeInterval
+  CodedValue:
+    name: CodedValue
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/CodedValue
+    description: A value from a controlled vocabulary
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    mixins:
+    - ValueMicroschemaDefinition
+    slots:
+    - codedValue__code
+    - codedValue__label
+    - codedValue__system
+    - profile_version
+    - semantic_mapping
+    - domain_of_use
+    attributes:
+      code:
+        name: code
+        description: The code value as a CURIE
+        range: uriorcurie
+        required: true
+      label:
+        name: label
+        description: Human-readable label for the code
+        range: string
+      system:
+        name: system
+        description: The code system URI
+        range: uriorcurie
+    class_uri: coms:CodedValue
   MeasurementObservationCde:
     name: MeasurementObservationCde
     definition_uri: https://w3id.org/linkml/linkml-microschema-profile/MeasurementObservationCde
@@ -1026,7 +1259,7 @@ classes:
     tree_root: true
 metamodel_version: 1.7.0
 source_file: linkml_microschema_profile.yaml
-source_file_date: '2026-01-29T16:02:13'
-source_file_size: 12831
-generation_date: '2026-01-29T16:02:26'
+source_file_date: '2026-01-29T16:20:12'
+source_file_size: 14773
+generation_date: '2026-01-29T16:20:26'
 

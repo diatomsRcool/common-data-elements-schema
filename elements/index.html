@@ -524,6 +524,10 @@ Microschemas are designed for inline composition without identifiers.</p>
 <td>A holder for CDE objects</td>
 </tr>
 <tr>
+<td><a href="CodedValue/">CodedValue</a></td>
+<td>A value from a controlled vocabulary</td>
+</tr>
+<tr>
 <td><a href="ConditionStatusCde/">ConditionStatusCde</a></td>
 <td>Record suggesting the presence of a disease or medical condition stated as a ...</td>
 </tr>
@@ -549,11 +553,19 @@ Microschemas are designed for inline composition without identifiers.</p>
 </tr>
 <tr>
 <td><a href="Quantity/">Quantity</a></td>
-<td>A value with a unit</td>
+<td>A value with optional unit</td>
 </tr>
 <tr>
 <td><a href="SdohObservationCde/">SdohObservationCde</a></td>
 <td>A data structure with key and value attributes that represents a single SDOH ...</td>
+</tr>
+<tr>
+<td><a href="TimeInterval/">TimeInterval</a></td>
+<td>A period between two timepoints</td>
+</tr>
+<tr>
+<td><a href="Timepoint/">Timepoint</a></td>
+<td>A point in time, potentially relative</td>
 </tr>
 </tbody>
 </table>
@@ -603,8 +615,16 @@ Microschemas are designed for inline composition without identifiers.</p>
 <td>An expression pointing at other CDE classes</td>
 </tr>
 <tr>
+<td><a href="code/">code</a></td>
+<td>The code value as a CURIE</td>
+</tr>
+<tr>
 <td><a href="collected_by/">collected_by</a></td>
 <td>Who collected the measurement</td>
+</tr>
+<tr>
+<td><a href="comparator/">comparator</a></td>
+<td>Comparison operator (less than, greater than, etc</td>
 </tr>
 <tr>
 <td><a href="condition_type/">condition_type</a></td>
@@ -619,6 +639,10 @@ Microschemas are designed for inline composition without identifiers.</p>
 <td>The data type of the observation</td>
 </tr>
 <tr>
+<td><a href="datetime/">datetime</a></td>
+<td>Absolute timestamp</td>
+</tr>
+<tr>
 <td><a href="diagnosis_method/">diagnosis_method</a></td>
 <td>The method used for diagnosis</td>
 </tr>
@@ -631,12 +655,24 @@ Microschemas are designed for inline composition without identifiers.</p>
 <td>A CURIE from RxNorm</td>
 </tr>
 <tr>
+<td><a href="duration/">duration</a></td>
+<td>Alternative to start/end</td>
+</tr>
+<tr>
+<td><a href="end/">end</a></td>
+<td>End of the interval</td>
+</tr>
+<tr>
 <td><a href="entries/">entries</a></td>
 <td>The collection of CDE objects</td>
 </tr>
 <tr>
 <td><a href="instrument/">instrument</a></td>
 <td>The instrument used for the measurement</td>
+</tr>
+<tr>
+<td><a href="label/">label</a></td>
+<td>Human-readable label for the code</td>
 </tr>
 <tr>
 <td><a href="llod/">llod</a></td>
@@ -651,6 +687,10 @@ Microschemas are designed for inline composition without identifiers.</p>
 <td>The method used for the measurement</td>
 </tr>
 <tr>
+<td><a href="offset/">offset</a></td>
+<td>Offset from event (e</td>
+</tr>
+<tr>
 <td><a href="procedure_type/">procedure_type</a></td>
 <td>A CURIE from OMOP</td>
 </tr>
@@ -663,6 +703,10 @@ Microschemas are designed for inline composition without identifiers.</p>
 <td>The reagent kit used for the measurement</td>
 </tr>
 <tr>
+<td><a href="relative_to_event/">relative_to_event</a></td>
+<td>Event this is relative to</td>
+</tr>
+<tr>
 <td><a href="sdoh_type/">sdoh_type</a></td>
 <td>The type of SDOH observation</td>
 </tr>
@@ -671,8 +715,16 @@ Microschemas are designed for inline composition without identifiers.</p>
 <td>URIs/CURIEs mapping this microschema to external standards (ISO-11179 DEC, NI...</td>
 </tr>
 <tr>
+<td><a href="start/">start</a></td>
+<td>Start of the interval</td>
+</tr>
+<tr>
 <td><a href="subject_identifier/">subject_identifier</a></td>
 <td>An identifier for the subject of the datum</td>
+</tr>
+<tr>
+<td><a href="system/">system</a></td>
+<td>The code system URI</td>
 </tr>
 <tr>
 <td><a href="ulod/">ulod</a></td>
@@ -704,6 +756,10 @@ Microschemas are designed for inline composition without identifiers.</p>
 <tr>
 <td><a href="CollectedByEnum/">CollectedByEnum</a></td>
 <td>Who collected the measurement</td>
+</tr>
+<tr>
+<td><a href="ComparatorEnum/">ComparatorEnum</a></td>
+<td>Comparator for quantity values</td>
 </tr>
 <tr>
 <td><a href="ContextEnum/">ContextEnum</a></td>

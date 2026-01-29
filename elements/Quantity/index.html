@@ -267,13 +267,24 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-quantity">Class: Quantity</h1>
-<p><em>A value with a unit</em></p>
-<p>URI: <a href="https://w3id.org/linkml/linkml-microschema-profile/Quantity">coms:Quantity</a></p>
+<p><em>A value with optional unit</em></p>
+<p>URI: <a href="http://schema.org/QuantitativeValue">schema:QuantitativeValue</a></p>
 <div class="mermaid"> classDiagram
     class Quantity
     click Quantity href "../Quantity/"
       ValueMicroschemaDefinition &lt;|-- Quantity
         click ValueMicroschemaDefinition href "../ValueMicroschemaDefinition/"
+
+      Quantity : comparator
+
+
+
+
+
+        Quantity --&gt; "0..1" ComparatorEnum : comparator
+        click ComparatorEnum href "../ComparatorEnum/"
+
+
 
       Quantity : domain_of_use
 
@@ -304,14 +315,20 @@
 <tbody>
 <tr>
 <td><a href="../value/">value</a></td>
-<td>0..1 <br/> <a href="../Decimal/">Decimal</a></td>
+<td>1 <br/> <a href="../Decimal/">Decimal</a></td>
 <td>The numeric value</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../unit/">unit</a></td>
 <td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td>A unit from UCUM</td>
+<td>Unit (UCUM, UO, QUDT, etc</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../comparator/">comparator</a></td>
+<td>0..1 <br/> <a href="../ComparatorEnum/">ComparatorEnum</a></td>
+<td>Comparison operator (less than, greater than, etc</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -345,6 +362,18 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><a href="../Timepoint/">Timepoint</a></td>
+<td><a href="../offset/">offset</a></td>
+<td>range</td>
+<td><a href="./">Quantity</a></td>
+</tr>
+<tr>
+<td><a href="../TimeInterval/">TimeInterval</a></td>
+<td><a href="../duration/">duration</a></td>
+<td>range</td>
+<td><a href="./">Quantity</a></td>
+</tr>
 <tr>
 <td><a href="../MeasurementObservationCde/">MeasurementObservationCde</a></td>
 <td><a href="../ulod/">ulod</a></td>
@@ -417,7 +446,7 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>coms:Quantity</td>
+<td>schema:QuantitativeValue</td>
 </tr>
 <tr>
 <td>native</td>
@@ -430,7 +459,7 @@
 <h3 id="direct">Direct</h3>
 <details>
 <pre><code class="language-yaml">name: Quantity
-description: A value with a unit
+description: A value with optional unit
 from_schema: https://w3id.org/linkml/linkml-microschema-profile
 mixins:
 - ValueMicroschemaDefinition
@@ -443,22 +472,33 @@ attributes:
     domain_of:
     - Quantity
     range: decimal
+    required: true
   unit:
     name: unit
-    description: A unit from UCUM
+    description: Unit (UCUM, UO, QUDT, etc.)
     from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    slot_uri: schema:unitCode
     domain_of:
     - Quantity
     - MeasurementObservationCde
     - SdohObservationCde
     range: uriorcurie
+  comparator:
+    name: comparator
+    description: Comparison operator (less than, greater than, etc.) or exact if null
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    rank: 1000
+    domain_of:
+    - Quantity
+    range: ComparatorEnum
+class_uri: schema:QuantitativeValue
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
 <pre><code class="language-yaml">name: Quantity
-description: A value with a unit
+description: A value with optional unit
 from_schema: https://w3id.org/linkml/linkml-microschema-profile
 mixins:
 - ValueMicroschemaDefinition
@@ -473,10 +513,12 @@ attributes:
     domain_of:
     - Quantity
     range: decimal
+    required: true
   unit:
     name: unit
-    description: A unit from UCUM
+    description: Unit (UCUM, UO, QUDT, etc.)
     from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    slot_uri: schema:unitCode
     alias: unit
     owner: Quantity
     domain_of:
@@ -484,6 +526,16 @@ attributes:
     - MeasurementObservationCde
     - SdohObservationCde
     range: uriorcurie
+  comparator:
+    name: comparator
+    description: Comparison operator (less than, greater than, etc.) or exact if null
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    rank: 1000
+    alias: comparator
+    owner: Quantity
+    domain_of:
+    - Quantity
+    range: ComparatorEnum
   profile_version:
     name: profile_version
     description: Version of microschema profile this conforms to
@@ -517,6 +569,7 @@ attributes:
     - MicroschemaDefinition
     range: string
     multivalued: true
+class_uri: schema:QuantitativeValue
 
 </code></pre>
 </details>

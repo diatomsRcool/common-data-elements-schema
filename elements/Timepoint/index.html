@@ -5,10 +5,10 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="https://linkml.github.io/linkml-microschema-profile/elements/ValueMicroschemaDefinition/" rel="canonical"/>
+<link href="https://linkml.github.io/linkml-microschema-profile/elements/Timepoint/" rel="canonical"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.7.1" name="generator"/>
-<title>Class: ValueMicroschemaDefinition - linkml-microschema-profile</title>
+<title>Class: Timepoint - linkml-microschema-profile</title>
 <link href="../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -23,7 +23,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#class-valuemicroschemadefinition">
+<a class="md-skip" href="#class-timepoint">
           Skip to content
         </a>
 </div>
@@ -47,7 +47,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Class: ValueMicroschemaDefinition
+              Class: Timepoint
             
           </span>
 </div>
@@ -189,10 +189,10 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#mixin-usage">
+<a class="md-nav__link" href="#usages">
 <span class="md-ellipsis">
       
-        Mixin Usage
+        Usages
       
     </span>
 </a>
@@ -266,40 +266,41 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="class-valuemicroschemadefinition">Class: ValueMicroschemaDefinition</h1>
-<p><em>A microschema representing a typed value with optional unit/system. Examples: Quantity, Timepoint, CodedValue, Range.</em></p>
-<p>URI: <a href="https://w3id.org/linkml/linkml-microschema-profile/ValueMicroschemaDefinition">coms:ValueMicroschemaDefinition</a></p>
+<h1 id="class-timepoint">Class: Timepoint</h1>
+<p><em>A point in time, potentially relative</em></p>
+<p>URI: <a href="https://w3id.org/linkml/linkml-microschema-profile/Timepoint">coms:Timepoint</a></p>
 <div class="mermaid"> classDiagram
-    class ValueMicroschemaDefinition
-    click ValueMicroschemaDefinition href "../ValueMicroschemaDefinition/"
-      MicroschemaDefinition &lt;|-- ValueMicroschemaDefinition
-        click MicroschemaDefinition href "../MicroschemaDefinition/"
-
-
-      ValueMicroschemaDefinition &lt;|-- Quantity
-        click Quantity href "../Quantity/"
+    class Timepoint
+    click Timepoint href "../Timepoint/"
       ValueMicroschemaDefinition &lt;|-- Timepoint
-        click Timepoint href "../Timepoint/"
-      ValueMicroschemaDefinition &lt;|-- TimeInterval
-        click TimeInterval href "../TimeInterval/"
-      ValueMicroschemaDefinition &lt;|-- CodedValue
-        click CodedValue href "../CodedValue/"
+        click ValueMicroschemaDefinition href "../ValueMicroschemaDefinition/"
+
+      Timepoint : datetime
+
+      Timepoint : domain_of_use
+
+      Timepoint : offset
 
 
-      ValueMicroschemaDefinition : domain_of_use
 
-      ValueMicroschemaDefinition : profile_version
 
-      ValueMicroschemaDefinition : semantic_mapping
+
+        Timepoint --&gt; "0..1" Quantity : offset
+        click Quantity href "../Quantity/"
+
+
+
+      Timepoint : profile_version
+
+      Timepoint : relative_to_event
+
+      Timepoint : semantic_mapping
 
 
 </div>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
-<li><a href="../MicroschemaDefinition/">MicroschemaDefinition</a><ul>
-<li><strong>ValueMicroschemaDefinition</strong></li>
-</ul>
-</li>
+<li><strong>Timepoint</strong> [ <a href="../ValueMicroschemaDefinition/">ValueMicroschemaDefinition</a>]</li>
 </ul>
 <h2 id="slots">Slots</h2>
 <table>
@@ -312,6 +313,24 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><a href="../datetime/">datetime</a></td>
+<td>0..1 <br/> <a href="../datetime/">datetime</a></td>
+<td>Absolute timestamp</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../relative_to_event/">relative_to_event</a></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>Event this is relative to</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../offset/">offset</a></td>
+<td>0..1 <br/> <a href="../Quantity/">Quantity</a></td>
+<td>Offset from event (e</td>
+<td>direct</td>
+</tr>
 <tr>
 <td><a href="../profile_version/">profile_version</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
@@ -332,30 +351,28 @@
 </tr>
 </tbody>
 </table>
-<h2 id="mixin-usage">Mixin Usage</h2>
+<h2 id="usages">Usages</h2>
 <table>
 <thead>
 <tr>
-<th>mixed into</th>
-<th>description</th>
+<th>used by</th>
+<th>used in</th>
+<th>type</th>
+<th>used</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="../Quantity/">Quantity</a></td>
-<td>A value with optional unit</td>
-</tr>
-<tr>
-<td><a href="../Timepoint/">Timepoint</a></td>
-<td>A point in time, potentially relative</td>
+<td><a href="../TimeInterval/">TimeInterval</a></td>
+<td><a href="../start/">start</a></td>
+<td>range</td>
+<td><a href="./">Timepoint</a></td>
 </tr>
 <tr>
 <td><a href="../TimeInterval/">TimeInterval</a></td>
-<td>A period between two timepoints</td>
-</tr>
-<tr>
-<td><a href="../CodedValue/">CodedValue</a></td>
-<td>A value from a controlled vocabulary</td>
+<td><a href="../end/">end</a></td>
+<td>range</td>
+<td><a href="./">Timepoint</a></td>
 </tr>
 </tbody>
 </table>
@@ -375,11 +392,11 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>coms:ValueMicroschemaDefinition</td>
+<td>coms:Timepoint</td>
 </tr>
 <tr>
 <td>native</td>
-<td>coms:ValueMicroschemaDefinition</td>
+<td>coms:Timepoint</td>
 </tr>
 </tbody>
 </table>
@@ -387,32 +404,86 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: ValueMicroschemaDefinition
-description: 'A microschema representing a typed value with optional unit/system.
-  Examples: Quantity, Timepoint, CodedValue, Range.'
+<pre><code class="language-yaml">name: Timepoint
+description: A point in time, potentially relative
 from_schema: https://w3id.org/linkml/linkml-microschema-profile
-is_a: MicroschemaDefinition
-mixin: true
-class_uri: coms:ValueMicroschemaDefinition
+mixins:
+- ValueMicroschemaDefinition
+attributes:
+  datetime:
+    name: datetime
+    description: Absolute timestamp
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    rank: 1000
+    domain_of:
+    - Timepoint
+    range: datetime
+  relative_to_event:
+    name: relative_to_event
+    description: Event this is relative to
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    rank: 1000
+    domain_of:
+    - Timepoint
+    range: uriorcurie
+  offset:
+    name: offset
+    description: Offset from event (e.g., "+3 days")
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    rank: 1000
+    domain_of:
+    - Timepoint
+    range: Quantity
+    inlined: true
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: ValueMicroschemaDefinition
-description: 'A microschema representing a typed value with optional unit/system.
-  Examples: Quantity, Timepoint, CodedValue, Range.'
+<pre><code class="language-yaml">name: Timepoint
+description: A point in time, potentially relative
 from_schema: https://w3id.org/linkml/linkml-microschema-profile
-is_a: MicroschemaDefinition
-mixin: true
+mixins:
+- ValueMicroschemaDefinition
 attributes:
+  datetime:
+    name: datetime
+    description: Absolute timestamp
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    rank: 1000
+    alias: datetime
+    owner: Timepoint
+    domain_of:
+    - Timepoint
+    range: datetime
+  relative_to_event:
+    name: relative_to_event
+    description: Event this is relative to
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    rank: 1000
+    alias: relative_to_event
+    owner: Timepoint
+    domain_of:
+    - Timepoint
+    range: uriorcurie
+  offset:
+    name: offset
+    description: Offset from event (e.g., "+3 days")
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    rank: 1000
+    alias: offset
+    owner: Timepoint
+    domain_of:
+    - Timepoint
+    range: Quantity
+    inlined: true
   profile_version:
     name: profile_version
     description: Version of microschema profile this conforms to
     from_schema: https://w3id.org/linkml/linkml-microschema-profile
     rank: 1000
     alias: profile_version
-    owner: ValueMicroschemaDefinition
+    owner: Timepoint
     domain_of:
     - MicroschemaDefinition
     range: string
@@ -423,7 +494,7 @@ attributes:
     from_schema: https://w3id.org/linkml/linkml-microschema-profile
     rank: 1000
     alias: semantic_mapping
-    owner: ValueMicroschemaDefinition
+    owner: Timepoint
     domain_of:
     - MicroschemaDefinition
     range: uriorcurie
@@ -434,12 +505,11 @@ attributes:
     from_schema: https://w3id.org/linkml/linkml-microschema-profile
     rank: 1000
     alias: domain_of_use
-    owner: ValueMicroschemaDefinition
+    owner: Timepoint
     domain_of:
     - MicroschemaDefinition
     range: string
     multivalued: true
-class_uri: coms:ValueMicroschemaDefinition
 
 </code></pre>
 </details>

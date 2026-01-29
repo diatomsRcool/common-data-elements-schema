@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://linkml.github.io/linkml-microschema-profile/elements/unit/">
+        <link rel="canonical" href="https://linkml.github.io/linkml-microschema-profile/elements/relative_to_event/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>Slot: unit - linkml-microschema-profile</title>
+        <title>Slot: relative_to_event - linkml-microschema-profile</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-unit" class="md-skip">
+        <a href="#slot-relative_to_event" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: unit
+              Slot: relative_to_event
             
           </span>
         </div>
@@ -416,10 +416,10 @@
   
 
 
-<h1 id="slot-unit">Slot: unit</h1>
-<p><em>A unit from UCUM</em></p>
-<p>URI: <a href="https://w3id.org/bdchm/unit">bdchm:unit</a>
-Alias: unit</p>
+<h1 id="slot-relative_to_event">Slot: relative_to_event</h1>
+<p><em>Event this is relative to</em></p>
+<p>URI: <a href="https://w3id.org/linkml/linkml-microschema-profile/relative_to_event">coms:relative_to_event</a>
+Alias: relative_to_event</p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -433,18 +433,8 @@ Alias: unit</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../SdohObservationCde/">SdohObservationCde</a></td>
-<td>A data structure with key and value attributes that represents a single SDOH ...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../MeasurementObservationCde/">MeasurementObservationCde</a></td>
-<td>A data structure with key and value attributes that represents a single obser...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Quantity/">Quantity</a></td>
-<td>A value with optional unit</td>
+<td><a href="../Timepoint/">Timepoint</a></td>
+<td>A point in time, potentially relative</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -469,27 +459,25 @@ Alias: unit</p>
 <tbody>
 <tr>
 <td>self</td>
-<td>bdchm:unit</td>
+<td>coms:relative_to_event</td>
 </tr>
 <tr>
 <td>native</td>
-<td>coms:unit</td>
+<td>coms:relative_to_event</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: unit
-description: A unit from UCUM
+<pre><code class="language-yaml">name: relative_to_event
+description: Event this is relative to
 from_schema: https://w3id.org/linkml/linkml-microschema-profile
 rank: 1000
-slot_uri: bdchm:unit
-alias: unit
+alias: relative_to_event
+owner: Timepoint
 domain_of:
-- Quantity
-- MeasurementObservationCde
-- SdohObservationCde
+- Timepoint
 range: uriorcurie
 
 </code></pre>

@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://linkml.github.io/linkml-microschema-profile/elements/unit/">
+        <link rel="canonical" href="https://linkml.github.io/linkml-microschema-profile/elements/ComparatorEnum/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>Slot: unit - linkml-microschema-profile</title>
+        <title>Enum: ComparatorEnum - linkml-microschema-profile</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-unit" class="md-skip">
+        <a href="#enum-comparatorenum" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: unit
+              Enum: ComparatorEnum
             
           </span>
         </div>
@@ -325,10 +325,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#applicable-classes" class="md-nav__link">
+  <a href="#permissible-values" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Applicable Classes
+        Permissible Values
       
     </span>
   </a>
@@ -336,10 +336,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#properties" class="md-nav__link">
+  <a href="#slots" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Properties
+        Slots
       
     </span>
   </a>
@@ -375,17 +375,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mappings" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Mappings
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#linkml-source" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -416,81 +405,85 @@
   
 
 
-<h1 id="slot-unit">Slot: unit</h1>
-<p><em>A unit from UCUM</em></p>
-<p>URI: <a href="https://w3id.org/bdchm/unit">bdchm:unit</a>
-Alias: unit</p>
-<!-- no inheritance hierarchy -->
-
-<h2 id="applicable-classes">Applicable Classes</h2>
+<h1 id="enum-comparatorenum">Enum: ComparatorEnum</h1>
+<p><em>Comparator for quantity values</em></p>
+<p>URI: <a href="https://w3id.org/linkml/linkml-microschema-profile/ComparatorEnum">coms:ComparatorEnum</a></p>
+<h2 id="permissible-values">Permissible Values</h2>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>lt</td>
+<td>coms:lt</td>
+<td>Less than</td>
+</tr>
+<tr>
+<td>le</td>
+<td>coms:le</td>
+<td>Less than or equal to</td>
+</tr>
+<tr>
+<td>ge</td>
+<td>coms:ge</td>
+<td>Greater than or equal to</td>
+</tr>
+<tr>
+<td>gt</td>
+<td>coms:gt</td>
+<td>Greater than</td>
+</tr>
+</tbody>
+</table>
+<h2 id="slots">Slots</h2>
 <table>
 <thead>
 <tr>
 <th>Name</th>
 <th>Description</th>
-<th>Modifies Slot</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="../SdohObservationCde/">SdohObservationCde</a></td>
-<td>A data structure with key and value attributes that represents a single SDOH ...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../MeasurementObservationCde/">MeasurementObservationCde</a></td>
-<td>A data structure with key and value attributes that represents a single obser...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Quantity/">Quantity</a></td>
-<td>A value with optional unit</td>
-<td>no</td>
+<td><a href="../comparator/">comparator</a></td>
+<td>Comparison operator (less than, greater than, etc</td>
 </tr>
 </tbody>
 </table>
-<h2 id="properties">Properties</h2>
-<ul>
-<li>Range: <a href="../Uriorcurie/">Uriorcurie</a></li>
-</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
 <li>from schema: https://w3id.org/linkml/linkml-microschema-profile</li>
 </ul>
-<h2 id="mappings">Mappings</h2>
-<table>
-<thead>
-<tr>
-<th>Mapping Type</th>
-<th>Mapped Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>self</td>
-<td>bdchm:unit</td>
-</tr>
-<tr>
-<td>native</td>
-<td>coms:unit</td>
-</tr>
-</tbody>
-</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: unit
-description: A unit from UCUM
+<pre><code class="language-yaml">name: ComparatorEnum
+description: Comparator for quantity values
 from_schema: https://w3id.org/linkml/linkml-microschema-profile
 rank: 1000
-slot_uri: bdchm:unit
-alias: unit
-domain_of:
-- Quantity
-- MeasurementObservationCde
-- SdohObservationCde
-range: uriorcurie
+permissible_values:
+  lt:
+    text: lt
+    description: Less than
+    meaning: coms:lt
+  le:
+    text: le
+    description: Less than or equal to
+    meaning: coms:le
+  ge:
+    text: ge
+    description: Greater than or equal to
+    meaning: coms:ge
+  gt:
+    text: gt
+    description: Greater than
+    meaning: coms:gt
 
 </code></pre>
 

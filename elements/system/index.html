@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://linkml.github.io/linkml-microschema-profile/elements/unit/">
+        <link rel="canonical" href="https://linkml.github.io/linkml-microschema-profile/elements/system/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>Slot: unit - linkml-microschema-profile</title>
+        <title>Slot: system - linkml-microschema-profile</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-unit" class="md-skip">
+        <a href="#slot-system" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: unit
+              Slot: system
             
           </span>
         </div>
@@ -416,10 +416,10 @@
   
 
 
-<h1 id="slot-unit">Slot: unit</h1>
-<p><em>A unit from UCUM</em></p>
-<p>URI: <a href="https://w3id.org/bdchm/unit">bdchm:unit</a>
-Alias: unit</p>
+<h1 id="slot-system">Slot: system</h1>
+<p><em>The code system URI</em></p>
+<p>URI: <a href="https://w3id.org/linkml/linkml-microschema-profile/system">coms:system</a>
+Alias: system</p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -433,18 +433,8 @@ Alias: unit</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../SdohObservationCde/">SdohObservationCde</a></td>
-<td>A data structure with key and value attributes that represents a single SDOH ...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../MeasurementObservationCde/">MeasurementObservationCde</a></td>
-<td>A data structure with key and value attributes that represents a single obser...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Quantity/">Quantity</a></td>
-<td>A value with optional unit</td>
+<td><a href="../CodedValue/">CodedValue</a></td>
+<td>A value from a controlled vocabulary</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -469,27 +459,25 @@ Alias: unit</p>
 <tbody>
 <tr>
 <td>self</td>
-<td>bdchm:unit</td>
+<td>coms:system</td>
 </tr>
 <tr>
 <td>native</td>
-<td>coms:unit</td>
+<td>coms:system</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: unit
-description: A unit from UCUM
+<pre><code class="language-yaml">name: system
+description: The code system URI
 from_schema: https://w3id.org/linkml/linkml-microschema-profile
 rank: 1000
-slot_uri: bdchm:unit
-alias: unit
+alias: system
+owner: CodedValue
 domain_of:
-- Quantity
-- MeasurementObservationCde
-- SdohObservationCde
+- CodedValue
 range: uriorcurie
 
 </code></pre>

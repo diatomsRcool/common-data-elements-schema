@@ -5,10 +5,10 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="https://linkml.github.io/linkml-microschema-profile/elements/ValueMicroschemaDefinition/" rel="canonical"/>
+<link href="https://linkml.github.io/linkml-microschema-profile/elements/CodedValue/" rel="canonical"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.7.1" name="generator"/>
-<title>Class: ValueMicroschemaDefinition - linkml-microschema-profile</title>
+<title>Class: CodedValue - linkml-microschema-profile</title>
 <link href="../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -23,7 +23,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#class-valuemicroschemadefinition">
+<a class="md-skip" href="#class-codedvalue">
           Skip to content
         </a>
 </div>
@@ -47,7 +47,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Class: ValueMicroschemaDefinition
+              Class: CodedValue
             
           </span>
 </div>
@@ -189,15 +189,6 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#mixin-usage">
-<span class="md-ellipsis">
-      
-        Mixin Usage
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#identifier-and-mapping-information">
 <span class="md-ellipsis">
       
@@ -266,40 +257,32 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="class-valuemicroschemadefinition">Class: ValueMicroschemaDefinition</h1>
-<p><em>A microschema representing a typed value with optional unit/system. Examples: Quantity, Timepoint, CodedValue, Range.</em></p>
-<p>URI: <a href="https://w3id.org/linkml/linkml-microschema-profile/ValueMicroschemaDefinition">coms:ValueMicroschemaDefinition</a></p>
+<h1 id="class-codedvalue">Class: CodedValue</h1>
+<p><em>A value from a controlled vocabulary</em></p>
+<p>URI: <a href="https://w3id.org/linkml/linkml-microschema-profile/CodedValue">coms:CodedValue</a></p>
 <div class="mermaid"> classDiagram
-    class ValueMicroschemaDefinition
-    click ValueMicroschemaDefinition href "../ValueMicroschemaDefinition/"
-      MicroschemaDefinition &lt;|-- ValueMicroschemaDefinition
-        click MicroschemaDefinition href "../MicroschemaDefinition/"
-
-
-      ValueMicroschemaDefinition &lt;|-- Quantity
-        click Quantity href "../Quantity/"
-      ValueMicroschemaDefinition &lt;|-- Timepoint
-        click Timepoint href "../Timepoint/"
-      ValueMicroschemaDefinition &lt;|-- TimeInterval
-        click TimeInterval href "../TimeInterval/"
+    class CodedValue
+    click CodedValue href "../CodedValue/"
       ValueMicroschemaDefinition &lt;|-- CodedValue
-        click CodedValue href "../CodedValue/"
+        click ValueMicroschemaDefinition href "../ValueMicroschemaDefinition/"
 
+      CodedValue : code
 
-      ValueMicroschemaDefinition : domain_of_use
+      CodedValue : domain_of_use
 
-      ValueMicroschemaDefinition : profile_version
+      CodedValue : label
 
-      ValueMicroschemaDefinition : semantic_mapping
+      CodedValue : profile_version
+
+      CodedValue : semantic_mapping
+
+      CodedValue : system
 
 
 </div>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
-<li><a href="../MicroschemaDefinition/">MicroschemaDefinition</a><ul>
-<li><strong>ValueMicroschemaDefinition</strong></li>
-</ul>
-</li>
+<li><strong>CodedValue</strong> [ <a href="../ValueMicroschemaDefinition/">ValueMicroschemaDefinition</a>]</li>
 </ul>
 <h2 id="slots">Slots</h2>
 <table>
@@ -312,6 +295,24 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><a href="../code/">code</a></td>
+<td>1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>The code value as a CURIE</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../label/">label</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Human-readable label for the code</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../system/">system</a></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>The code system URI</td>
+<td>direct</td>
+</tr>
 <tr>
 <td><a href="../profile_version/">profile_version</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
@@ -332,33 +333,6 @@
 </tr>
 </tbody>
 </table>
-<h2 id="mixin-usage">Mixin Usage</h2>
-<table>
-<thead>
-<tr>
-<th>mixed into</th>
-<th>description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../Quantity/">Quantity</a></td>
-<td>A value with optional unit</td>
-</tr>
-<tr>
-<td><a href="../Timepoint/">Timepoint</a></td>
-<td>A point in time, potentially relative</td>
-</tr>
-<tr>
-<td><a href="../TimeInterval/">TimeInterval</a></td>
-<td>A period between two timepoints</td>
-</tr>
-<tr>
-<td><a href="../CodedValue/">CodedValue</a></td>
-<td>A value from a controlled vocabulary</td>
-</tr>
-</tbody>
-</table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
@@ -375,11 +349,11 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>coms:ValueMicroschemaDefinition</td>
+<td>coms:CodedValue</td>
 </tr>
 <tr>
 <td>native</td>
-<td>coms:ValueMicroschemaDefinition</td>
+<td>coms:CodedValue</td>
 </tr>
 </tbody>
 </table>
@@ -387,32 +361,86 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: ValueMicroschemaDefinition
-description: 'A microschema representing a typed value with optional unit/system.
-  Examples: Quantity, Timepoint, CodedValue, Range.'
+<pre><code class="language-yaml">name: CodedValue
+description: A value from a controlled vocabulary
 from_schema: https://w3id.org/linkml/linkml-microschema-profile
-is_a: MicroschemaDefinition
-mixin: true
-class_uri: coms:ValueMicroschemaDefinition
+mixins:
+- ValueMicroschemaDefinition
+attributes:
+  code:
+    name: code
+    description: The code value as a CURIE
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    rank: 1000
+    domain_of:
+    - CodedValue
+    range: uriorcurie
+    required: true
+  label:
+    name: label
+    description: Human-readable label for the code
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    rank: 1000
+    domain_of:
+    - CodedValue
+    range: string
+  system:
+    name: system
+    description: The code system URI
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    rank: 1000
+    domain_of:
+    - CodedValue
+    range: uriorcurie
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: ValueMicroschemaDefinition
-description: 'A microschema representing a typed value with optional unit/system.
-  Examples: Quantity, Timepoint, CodedValue, Range.'
+<pre><code class="language-yaml">name: CodedValue
+description: A value from a controlled vocabulary
 from_schema: https://w3id.org/linkml/linkml-microschema-profile
-is_a: MicroschemaDefinition
-mixin: true
+mixins:
+- ValueMicroschemaDefinition
 attributes:
+  code:
+    name: code
+    description: The code value as a CURIE
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    rank: 1000
+    alias: code
+    owner: CodedValue
+    domain_of:
+    - CodedValue
+    range: uriorcurie
+    required: true
+  label:
+    name: label
+    description: Human-readable label for the code
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    rank: 1000
+    alias: label
+    owner: CodedValue
+    domain_of:
+    - CodedValue
+    range: string
+  system:
+    name: system
+    description: The code system URI
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    rank: 1000
+    alias: system
+    owner: CodedValue
+    domain_of:
+    - CodedValue
+    range: uriorcurie
   profile_version:
     name: profile_version
     description: Version of microschema profile this conforms to
     from_schema: https://w3id.org/linkml/linkml-microschema-profile
     rank: 1000
     alias: profile_version
-    owner: ValueMicroschemaDefinition
+    owner: CodedValue
     domain_of:
     - MicroschemaDefinition
     range: string
@@ -423,7 +451,7 @@ attributes:
     from_schema: https://w3id.org/linkml/linkml-microschema-profile
     rank: 1000
     alias: semantic_mapping
-    owner: ValueMicroschemaDefinition
+    owner: CodedValue
     domain_of:
     - MicroschemaDefinition
     range: uriorcurie
@@ -434,12 +462,11 @@ attributes:
     from_schema: https://w3id.org/linkml/linkml-microschema-profile
     rank: 1000
     alias: domain_of_use
-    owner: ValueMicroschemaDefinition
+    owner: CodedValue
     domain_of:
     - MicroschemaDefinition
     range: string
     multivalued: true
-class_uri: coms:ValueMicroschemaDefinition
 
 </code></pre>
 </details>

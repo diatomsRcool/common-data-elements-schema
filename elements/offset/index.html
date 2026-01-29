@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://linkml.github.io/linkml-microschema-profile/elements/unit/">
+        <link rel="canonical" href="https://linkml.github.io/linkml-microschema-profile/elements/offset/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>Slot: unit - linkml-microschema-profile</title>
+        <title>Slot: offset - linkml-microschema-profile</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-unit" class="md-skip">
+        <a href="#slot-offset" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: unit
+              Slot: offset
             
           </span>
         </div>
@@ -416,10 +416,10 @@
   
 
 
-<h1 id="slot-unit">Slot: unit</h1>
-<p><em>A unit from UCUM</em></p>
-<p>URI: <a href="https://w3id.org/bdchm/unit">bdchm:unit</a>
-Alias: unit</p>
+<h1 id="slot-offset">Slot: offset</h1>
+<p><em>Offset from event (e.g., "+3 days")</em></p>
+<p>URI: <a href="https://w3id.org/linkml/linkml-microschema-profile/offset">coms:offset</a>
+Alias: offset</p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -433,25 +433,15 @@ Alias: unit</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../SdohObservationCde/">SdohObservationCde</a></td>
-<td>A data structure with key and value attributes that represents a single SDOH ...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../MeasurementObservationCde/">MeasurementObservationCde</a></td>
-<td>A data structure with key and value attributes that represents a single obser...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Quantity/">Quantity</a></td>
-<td>A value with optional unit</td>
+<td><a href="../Timepoint/">Timepoint</a></td>
+<td>A point in time, potentially relative</td>
 <td>no</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../Uriorcurie/">Uriorcurie</a></li>
+<li>Range: <a href="../Quantity/">Quantity</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -469,28 +459,27 @@ Alias: unit</p>
 <tbody>
 <tr>
 <td>self</td>
-<td>bdchm:unit</td>
+<td>coms:offset</td>
 </tr>
 <tr>
 <td>native</td>
-<td>coms:unit</td>
+<td>coms:offset</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: unit
-description: A unit from UCUM
+<pre><code class="language-yaml">name: offset
+description: Offset from event (e.g., &quot;+3 days&quot;)
 from_schema: https://w3id.org/linkml/linkml-microschema-profile
 rank: 1000
-slot_uri: bdchm:unit
-alias: unit
+alias: offset
+owner: Timepoint
 domain_of:
-- Quantity
-- MeasurementObservationCde
-- SdohObservationCde
-range: uriorcurie
+- Timepoint
+range: Quantity
+inlined: true
 
 </code></pre>
 

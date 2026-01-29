@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://linkml.github.io/linkml-microschema-profile/elements/unit/">
+        <link rel="canonical" href="https://linkml.github.io/linkml-microschema-profile/elements/comparator/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>Slot: unit - linkml-microschema-profile</title>
+        <title>Slot: comparator - linkml-microschema-profile</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-unit" class="md-skip">
+        <a href="#slot-comparator" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: unit
+              Slot: comparator
             
           </span>
         </div>
@@ -416,10 +416,10 @@
   
 
 
-<h1 id="slot-unit">Slot: unit</h1>
-<p><em>A unit from UCUM</em></p>
-<p>URI: <a href="https://w3id.org/bdchm/unit">bdchm:unit</a>
-Alias: unit</p>
+<h1 id="slot-comparator">Slot: comparator</h1>
+<p><em>Comparison operator (less than, greater than, etc.) or exact if null</em></p>
+<p>URI: <a href="https://w3id.org/linkml/linkml-microschema-profile/comparator">coms:comparator</a>
+Alias: comparator</p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -433,16 +433,6 @@ Alias: unit</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../SdohObservationCde/">SdohObservationCde</a></td>
-<td>A data structure with key and value attributes that represents a single SDOH ...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../MeasurementObservationCde/">MeasurementObservationCde</a></td>
-<td>A data structure with key and value attributes that represents a single obser...</td>
-<td>no</td>
-</tr>
-<tr>
 <td><a href="../Quantity/">Quantity</a></td>
 <td>A value with optional unit</td>
 <td>no</td>
@@ -451,7 +441,7 @@ Alias: unit</p>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../Uriorcurie/">Uriorcurie</a></li>
+<li>Range: <a href="../ComparatorEnum/">ComparatorEnum</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -469,28 +459,26 @@ Alias: unit</p>
 <tbody>
 <tr>
 <td>self</td>
-<td>bdchm:unit</td>
+<td>coms:comparator</td>
 </tr>
 <tr>
 <td>native</td>
-<td>coms:unit</td>
+<td>coms:comparator</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: unit
-description: A unit from UCUM
+<pre><code class="language-yaml">name: comparator
+description: Comparison operator (less than, greater than, etc.) or exact if null
 from_schema: https://w3id.org/linkml/linkml-microschema-profile
 rank: 1000
-slot_uri: bdchm:unit
-alias: unit
+alias: comparator
+owner: Quantity
 domain_of:
 - Quantity
-- MeasurementObservationCde
-- SdohObservationCde
-range: uriorcurie
+range: ComparatorEnum
 
 </code></pre>
 
