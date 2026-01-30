@@ -329,6 +329,96 @@ types:
     uri: xsd:string
     repr: str
 enums:
+  RouteAdminEnum:
+    name: RouteAdminEnum
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/RouteAdminEnum
+    description: Routes of drug administration
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    permissible_values:
+      oral:
+        text: oral
+        description: Oral administration
+        meaning: OMOP:4132161
+      intravenous:
+        text: intravenous
+        description: Intravenous administration
+        meaning: OMOP:4171047
+      intramuscular:
+        text: intramuscular
+        description: Intramuscular administration
+        meaning: OMOP:4302612
+      subcutaneous:
+        text: subcutaneous
+        description: Subcutaneous administration
+        meaning: OMOP:4142048
+      intradermal:
+        text: intradermal
+        description: Intradermal administration
+        meaning: OMOP:4156706
+      transdermal:
+        text: transdermal
+        description: Transdermal administration
+        meaning: OMOP:4262099
+      rectal:
+        text: rectal
+        description: Rectal administration
+        meaning: OMOP:4290759
+      vaginal:
+        text: vaginal
+        description: Vaginal administration
+        meaning: OMOP:4057765
+      nasal:
+        text: nasal
+        description: Nasal administration
+        meaning: OMOP:4262914
+      topical:
+        text: topical
+        description: Topical administration
+        meaning: OMOP:4263689
+      sublingual:
+        text: sublingual
+        description: Sublingual administration
+        meaning: OMOP:4292110
+      buccal:
+        text: buccal
+        description: Buccal administration
+        meaning: OMOP:4181897
+      intra_articular:
+        text: intra_articular
+        description: Intra-articular administration
+        meaning: OMOP:4006860
+      intraperitoneal:
+        text: intraperitoneal
+        description: Intraperitoneal administration
+        meaning: OMOP:4243022
+      intrathecal:
+        text: intrathecal
+        description: Intrathecal administration
+        meaning: OMOP:4217202
+      epidural:
+        text: epidural
+        description: Epidural administration
+        meaning: OMOP:4225555
+      intra_arterial:
+        text: intra_arterial
+        description: Intra-arterial administration
+        meaning: OMOP:4240824
+      ophthalmic:
+        text: ophthalmic
+        description: Ophthalmic administration
+        meaning: OMOP:4184451
+      otic:
+        text: otic
+        description: Otic (ear) administration
+        meaning: OMOP:4023156
+      enteral:
+        text: enteral
+        description: Enteral administration
+        meaning: OMOP:4167540
+      percutaneous:
+        text: percutaneous
+        description: Percutaneous administration
+        meaning: OMOP:4177987
   ComparatorEnum:
     name: ComparatorEnum
     definition_uri: https://w3id.org/linkml/linkml-microschema-profile/ComparatorEnum
@@ -928,6 +1018,16 @@ slots:
     range: Quantity
     inlined: true
     inlined_as_list: true
+  route_of_administration:
+    name: route_of_administration
+    definition_uri: https://w3id.org/linkml/linkml-microschema-profile/route_of_administration
+    description: Routes of drug administration
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    slot_uri: coms:route_of_administration
+    owner: DrugStatusRecord
+    domain_of:
+    - DrugStatusRecord
+    range: RouteAdminEnum
 classes:
   MicroschemaDefinition:
     name: MicroschemaDefinition
@@ -1087,6 +1187,7 @@ classes:
     - collected_by
     - age_at_drug_start
     - age_at_drug_end
+    - route_of_administration
     class_uri: bdchm:DrugExposure
   ProcedureStatusRecord:
     name: ProcedureStatusRecord
@@ -1111,7 +1212,7 @@ classes:
     class_uri: bdchm:Procedure
 metamodel_version: 1.7.0
 source_file: linkml_microschema_profile.yaml
-source_file_date: '2026-01-30T20:34:12'
-source_file_size: 13895
-generation_date: '2026-01-30T20:34:23'
+source_file_date: '2026-01-30T21:02:19'
+source_file_size: 16096
+generation_date: '2026-01-30T21:02:32'
 

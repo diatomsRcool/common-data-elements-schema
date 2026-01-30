@@ -309,6 +309,17 @@
 
 
 
+      DrugStatusRecord : route_of_administration
+
+
+
+
+
+        DrugStatusRecord --&gt; "0..1" RouteAdminEnum : route_of_administration
+        click RouteAdminEnum href "../RouteAdminEnum/"
+
+
+
       DrugStatusRecord : subject_identifier
 
 
@@ -359,6 +370,12 @@
 <td><a href="../age_at_drug_end/">age_at_drug_end</a></td>
 <td>0..1 <br/> <a href="../Quantity/">Quantity</a></td>
 <td>Age of the subject at the end of drug exposure</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../route_of_administration/">route_of_administration</a></td>
+<td>0..1 <br/> <a href="../RouteAdminEnum/">RouteAdminEnum</a></td>
+<td>Routes of drug administration</td>
 <td>direct</td>
 </tr>
 </tbody>
@@ -422,6 +439,7 @@ slots:
 - collected_by
 - age_at_drug_start
 - age_at_drug_end
+- route_of_administration
 class_uri: bdchm:DrugExposure
 
 </code></pre>
@@ -508,6 +526,16 @@ attributes:
     domain_of:
     - DrugStatusRecord
     range: Quantity
+  route_of_administration:
+    name: route_of_administration
+    description: Routes of drug administration
+    from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    rank: 1000
+    alias: route_of_administration
+    owner: DrugStatusRecord
+    domain_of:
+    - DrugStatusRecord
+    range: RouteAdminEnum
 class_uri: bdchm:DrugExposure
 
 </code></pre>
