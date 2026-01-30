@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://linkml.github.io/linkml-microschema-profile/elements/label/">
+        <link rel="canonical" href="https://linkml.github.io/linkml-microschema-profile/elements/interval_start/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>Slot: label - linkml-microschema-profile</title>
+        <title>Slot: interval_start - linkml-microschema-profile</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-label" class="md-skip">
+        <a href="#slot-interval_start" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: label
+              Slot: interval_start
             
           </span>
         </div>
@@ -416,10 +416,10 @@
   
 
 
-<h1 id="slot-label">Slot: label</h1>
-<p><em>Human-readable label for the code</em></p>
-<p>URI: <a href="https://w3id.org/linkml/linkml-microschema-profile/label">coms:label</a>
-Alias: label</p>
+<h1 id="slot-interval_start">Slot: interval_start</h1>
+<p><em>Start of the interval</em></p>
+<p>URI: <a href="https://w3id.org/linkml/linkml-microschema-profile/interval_start">coms:interval_start</a>
+Alias: interval_start</p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -433,15 +433,15 @@ Alias: label</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../CodedValue/">CodedValue</a></td>
-<td>A value from a controlled vocabulary</td>
+<td><a href="../TimeInterval/">TimeInterval</a></td>
+<td>A period between two timepoints</td>
 <td>no</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../String/">String</a></li>
+<li>Range: <a href="../Timepoint/">Timepoint</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -459,26 +459,26 @@ Alias: label</p>
 <tbody>
 <tr>
 <td>self</td>
-<td>coms:label</td>
+<td>coms:interval_start</td>
 </tr>
 <tr>
 <td>native</td>
-<td>coms:label</td>
+<td>coms:interval_start</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: label
-description: Human-readable label for the code
+<pre><code class="language-yaml">name: interval_start
+description: Start of the interval
 from_schema: https://w3id.org/linkml/linkml-microschema-profile
 rank: 1000
-alias: label
-owner: CodedValue
+alias: interval_start
 domain_of:
-- CodedValue
-range: string
+- TimeInterval
+range: Timepoint
+inlined: true
 
 </code></pre>
 

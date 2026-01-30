@@ -256,9 +256,9 @@
     click CodedValue href "../CodedValue/"
       CodedValue : code
 
-      CodedValue : label
+      CodedValue : code_label
 
-      CodedValue : system
+      CodedValue : code_system
 
 
 </div>
@@ -281,13 +281,13 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../label/">label</a></td>
+<td><a href="../code_label/">code_label</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Human-readable label for the code</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../system/">system</a></td>
+<td><a href="../code_system/">code_system</a></td>
 <td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>The code system URI</td>
 <td>direct</td>
@@ -327,32 +327,10 @@ instantiates:
 - ValueMicroschemaDefinition
 description: A value from a controlled vocabulary
 from_schema: https://w3id.org/linkml/linkml-microschema-profile
-attributes:
-  code:
-    name: code
-    description: The code value as a CURIE
-    from_schema: https://w3id.org/linkml/linkml-microschema-profile
-    rank: 1000
-    domain_of:
-    - CodedValue
-    range: uriorcurie
-    required: true
-  label:
-    name: label
-    description: Human-readable label for the code
-    from_schema: https://w3id.org/linkml/linkml-microschema-profile
-    rank: 1000
-    domain_of:
-    - CodedValue
-    range: string
-  system:
-    name: system
-    description: The code system URI
-    from_schema: https://w3id.org/linkml/linkml-microschema-profile
-    rank: 1000
-    domain_of:
-    - CodedValue
-    range: uriorcurie
+slots:
+- code
+- code_label
+- code_system
 
 </code></pre>
 </details>
@@ -375,22 +353,22 @@ attributes:
     - CodedValue
     range: uriorcurie
     required: true
-  label:
-    name: label
+  code_label:
+    name: code_label
     description: Human-readable label for the code
     from_schema: https://w3id.org/linkml/linkml-microschema-profile
     rank: 1000
-    alias: label
+    alias: code_label
     owner: CodedValue
     domain_of:
     - CodedValue
     range: string
-  system:
-    name: system
+  code_system:
+    name: code_system
     description: The code system URI
     from_schema: https://w3id.org/linkml/linkml-microschema-profile
     rank: 1000
-    alias: system
+    alias: code_system
     owner: CodedValue
     domain_of:
     - CodedValue

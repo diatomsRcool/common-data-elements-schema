@@ -205,6 +205,14 @@
          <lastmod>2026-01-30</lastmod>
     </url>
     <url>
+         <loc>https://linkml.github.io/linkml-microschema-profile/elements/code_label/</loc>
+         <lastmod>2026-01-30</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/linkml-microschema-profile/elements/code_system/</loc>
+         <lastmod>2026-01-30</lastmod>
+    </url>
+    <url>
          <loc>https://linkml.github.io/linkml-microschema-profile/elements/collected_by/</loc>
          <lastmod>2026-01-30</lastmod>
     </url>
@@ -245,15 +253,15 @@
          <lastmod>2026-01-30</lastmod>
     </url>
     <url>
-         <loc>https://linkml.github.io/linkml-microschema-profile/elements/end/</loc>
-         <lastmod>2026-01-30</lastmod>
-    </url>
-    <url>
          <loc>https://linkml.github.io/linkml-microschema-profile/elements/instrument/</loc>
          <lastmod>2026-01-30</lastmod>
     </url>
     <url>
-         <loc>https://linkml.github.io/linkml-microschema-profile/elements/label/</loc>
+         <loc>https://linkml.github.io/linkml-microschema-profile/elements/interval_end/</loc>
+         <lastmod>2026-01-30</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/linkml-microschema-profile/elements/interval_start/</loc>
          <lastmod>2026-01-30</lastmod>
     </url>
     <url>
@@ -285,6 +293,14 @@
          <lastmod>2026-01-30</lastmod>
     </url>
     <url>
+         <loc>https://linkml.github.io/linkml-microschema-profile/elements/quantity_unit/</loc>
+         <lastmod>2026-01-30</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/linkml-microschema-profile/elements/quantity_value/</loc>
+         <lastmod>2026-01-30</lastmod>
+    </url>
+    <url>
          <loc>https://linkml.github.io/linkml-microschema-profile/elements/reagent_kit/</loc>
          <lastmod>2026-01-30</lastmod>
     </url>
@@ -297,15 +313,7 @@
          <lastmod>2026-01-30</lastmod>
     </url>
     <url>
-         <loc>https://linkml.github.io/linkml-microschema-profile/elements/start/</loc>
-         <lastmod>2026-01-30</lastmod>
-    </url>
-    <url>
          <loc>https://linkml.github.io/linkml-microschema-profile/elements/subject_identifier/</loc>
-         <lastmod>2026-01-30</lastmod>
-    </url>
-    <url>
-         <loc>https://linkml.github.io/linkml-microschema-profile/elements/system/</loc>
          <lastmod>2026-01-30</lastmod>
     </url>
     <url>
@@ -314,10 +322,6 @@
     </url>
     <url>
          <loc>https://linkml.github.io/linkml-microschema-profile/elements/unit/</loc>
-         <lastmod>2026-01-30</lastmod>
-    </url>
-    <url>
-         <loc>https://linkml.github.io/linkml-microschema-profile/elements/value/</loc>
          <lastmod>2026-01-30</lastmod>
     </url>
 </urlset>

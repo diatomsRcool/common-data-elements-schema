@@ -325,13 +325,13 @@
 <tbody>
 <tr>
 <td><a href="../TimeInterval/">TimeInterval</a></td>
-<td><a href="../start/">start</a></td>
+<td><a href="../interval_start/">interval_start</a></td>
 <td>range</td>
 <td><a href="./">Timepoint</a></td>
 </tr>
 <tr>
 <td><a href="../TimeInterval/">TimeInterval</a></td>
-<td><a href="../end/">end</a></td>
+<td><a href="../interval_end/">interval_end</a></td>
 <td>range</td>
 <td><a href="./">Timepoint</a></td>
 </tr>
@@ -370,32 +370,10 @@ instantiates:
 - ValueMicroschemaDefinition
 description: A point in time, potentially relative
 from_schema: https://w3id.org/linkml/linkml-microschema-profile
-attributes:
-  datetime:
-    name: datetime
-    description: Absolute timestamp
-    from_schema: https://w3id.org/linkml/linkml-microschema-profile
-    rank: 1000
-    domain_of:
-    - Timepoint
-    range: datetime
-  relative_to_event:
-    name: relative_to_event
-    description: Event this is relative to
-    from_schema: https://w3id.org/linkml/linkml-microschema-profile
-    rank: 1000
-    domain_of:
-    - Timepoint
-    range: uriorcurie
-  offset:
-    name: offset
-    description: Offset from event (e.g., "+3 days")
-    from_schema: https://w3id.org/linkml/linkml-microschema-profile
-    rank: 1000
-    domain_of:
-    - Timepoint
-    range: Quantity
-    inlined: true
+slots:
+- datetime
+- relative_to_event
+- offset
 
 </code></pre>
 </details>

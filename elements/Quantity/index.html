@@ -274,9 +274,9 @@
 
 
 
-      Quantity : unit
+      Quantity : quantity_unit
 
-      Quantity : value
+      Quantity : quantity_value
 
 
 </div>
@@ -293,13 +293,13 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../value/">value</a></td>
+<td><a href="../quantity_value/">quantity_value</a></td>
 <td>1 <br/> <a href="../Decimal/">Decimal</a></td>
 <td>The numeric value</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../unit/">unit</a></td>
+<td><a href="../quantity_unit/">quantity_unit</a></td>
 <td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>Unit (UCUM, UO, QUDT, etc</td>
 <td>direct</td>
@@ -418,33 +418,10 @@ instantiates:
 - ValueMicroschemaDefinition
 description: A value with optional unit
 from_schema: https://w3id.org/linkml/linkml-microschema-profile
-attributes:
-  value:
-    name: value
-    description: The numeric value
-    from_schema: https://w3id.org/linkml/linkml-microschema-profile
-    rank: 1000
-    domain_of:
-    - Quantity
-    range: decimal
-    required: true
-  unit:
-    name: unit
-    description: Unit (UCUM, UO, QUDT, etc.)
-    from_schema: https://w3id.org/linkml/linkml-microschema-profile
-    slot_uri: schema:unitCode
-    domain_of:
-    - Quantity
-    - ClinicalMeasurementRecord
-    range: uriorcurie
-  comparator:
-    name: comparator
-    description: Comparison operator (less than, greater than, etc.) or exact if null
-    from_schema: https://w3id.org/linkml/linkml-microschema-profile
-    rank: 1000
-    domain_of:
-    - Quantity
-    range: ComparatorEnum
+slots:
+- quantity_value
+- quantity_unit
+- comparator
 class_uri: schema:QuantitativeValue
 
 </code></pre>
@@ -457,27 +434,27 @@ instantiates:
 description: A value with optional unit
 from_schema: https://w3id.org/linkml/linkml-microschema-profile
 attributes:
-  value:
-    name: value
+  quantity_value:
+    name: quantity_value
     description: The numeric value
     from_schema: https://w3id.org/linkml/linkml-microschema-profile
     rank: 1000
-    alias: value
+    alias: quantity_value
     owner: Quantity
     domain_of:
     - Quantity
     range: decimal
     required: true
-  unit:
-    name: unit
+  quantity_unit:
+    name: quantity_unit
     description: Unit (UCUM, UO, QUDT, etc.)
     from_schema: https://w3id.org/linkml/linkml-microschema-profile
+    rank: 1000
     slot_uri: schema:unitCode
-    alias: unit
+    alias: quantity_unit
     owner: Quantity
     domain_of:
     - Quantity
-    - ClinicalMeasurementRecord
     range: uriorcurie
   comparator:
     name: comparator

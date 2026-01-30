@@ -265,24 +265,24 @@
 
 
 
-      TimeInterval : end
+      TimeInterval : interval_end
 
 
 
 
 
-        TimeInterval --&gt; "0..1" Timepoint : end
+        TimeInterval --&gt; "0..1" Timepoint : interval_end
         click Timepoint href "../Timepoint/"
 
 
 
-      TimeInterval : start
+      TimeInterval : interval_start
 
 
 
 
 
-        TimeInterval --&gt; "0..1" Timepoint : start
+        TimeInterval --&gt; "0..1" Timepoint : interval_start
         click Timepoint href "../Timepoint/"
 
 
@@ -302,13 +302,13 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../start/">start</a></td>
+<td><a href="../interval_start/">interval_start</a></td>
 <td>0..1 <br/> <a href="../Timepoint/">Timepoint</a></td>
 <td>Start of the interval</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../end/">end</a></td>
+<td><a href="../interval_end/">interval_end</a></td>
 <td>0..1 <br/> <a href="../Timepoint/">Timepoint</a></td>
 <td>End of the interval</td>
 <td>direct</td>
@@ -316,7 +316,7 @@
 <tr>
 <td><a href="../duration/">duration</a></td>
 <td>0..1 <br/> <a href="../Quantity/">Quantity</a></td>
-<td>Alternative to start/end</td>
+<td>Duration as alternative to start/end</td>
 <td>direct</td>
 </tr>
 </tbody>
@@ -354,34 +354,10 @@ instantiates:
 - ValueMicroschemaDefinition
 description: A period between two timepoints
 from_schema: https://w3id.org/linkml/linkml-microschema-profile
-attributes:
-  start:
-    name: start
-    description: Start of the interval
-    from_schema: https://w3id.org/linkml/linkml-microschema-profile
-    rank: 1000
-    domain_of:
-    - TimeInterval
-    range: Timepoint
-    inlined: true
-  end:
-    name: end
-    description: End of the interval
-    from_schema: https://w3id.org/linkml/linkml-microschema-profile
-    rank: 1000
-    domain_of:
-    - TimeInterval
-    range: Timepoint
-    inlined: true
-  duration:
-    name: duration
-    description: Alternative to start/end
-    from_schema: https://w3id.org/linkml/linkml-microschema-profile
-    rank: 1000
-    domain_of:
-    - TimeInterval
-    range: Quantity
-    inlined: true
+slots:
+- interval_start
+- interval_end
+- duration
 
 </code></pre>
 </details>
@@ -393,23 +369,23 @@ instantiates:
 description: A period between two timepoints
 from_schema: https://w3id.org/linkml/linkml-microschema-profile
 attributes:
-  start:
-    name: start
+  interval_start:
+    name: interval_start
     description: Start of the interval
     from_schema: https://w3id.org/linkml/linkml-microschema-profile
     rank: 1000
-    alias: start
+    alias: interval_start
     owner: TimeInterval
     domain_of:
     - TimeInterval
     range: Timepoint
     inlined: true
-  end:
-    name: end
+  interval_end:
+    name: interval_end
     description: End of the interval
     from_schema: https://w3id.org/linkml/linkml-microschema-profile
     rank: 1000
-    alias: end
+    alias: interval_end
     owner: TimeInterval
     domain_of:
     - TimeInterval
@@ -417,7 +393,7 @@ attributes:
     inlined: true
   duration:
     name: duration
-    description: Alternative to start/end
+    description: Duration as alternative to start/end
     from_schema: https://w3id.org/linkml/linkml-microschema-profile
     rank: 1000
     alias: duration
